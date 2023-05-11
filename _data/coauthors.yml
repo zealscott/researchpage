@@ -14,20 +14,20 @@
   - firstname: ["Zheng"]
     url: https://faculty.smu.edu.sg/profile/zheng-baihua-521
 
-"Jianxun"
+"Jianxun":
   - firstname: ["Lian"]
-    url:https://www.microsoft.com/en-us/research/people/jialia
+    url: https://www.microsoft.com/en-us/research/people/jialia
 
-"Xing"
+"Xing":
   - firstname: ["Xie"]
-    url:https://www.microsoft.com/en-us/research/people/xingx/
+    url: https://www.microsoft.com/en-us/research/people/xingx/
 
 
-"Zhikun"
+"Zhikun":
   - firstname: ["Zhang"]
-    url:http://zhangzhk.com/
+    url: http://zhangzhk.com/
 
 
-"Ninghui"
+"Ninghui":
   - firstname: ["Li"]
-    url:https://www.cs.purdue.edu/homes/ninghui
+    url: https://www.cs.purdue.edu/homes/ninghui
