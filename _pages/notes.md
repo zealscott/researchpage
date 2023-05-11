@@ -16,7 +16,8 @@ nav_order: 3
 **Machine Learning** *(Fall 2019)*
 
 * [Syllabus](./ml/index.html)
-* [Notes](./ml/Keynotes.html)  | [Recap](./ml/recap.html)
+* [Notes](./ml/Keynotes.html)
+* [Recap](./ml/recap.html)
 
 **Data Mining** *(Spring 2019)*
 
@@ -34,13 +35,15 @@ nav_order: 3
 **Data Management Systems** *(Fall 2018)*
 
 * [Guideline](./db/index.html)
-* [Notes](./db/notes/data%20model.html) | [Recap](./db/recap/Distributed%20DB.html)
+* [Notes](./db/notes/data%20model.html)
+* [Recap](./db/recap/Distributed%20DB.html)
 * [Project](./db/project/postgre1.html)
 
 **Distributed System** *(Fall 2018)*
 
 * [Guideline](./ds)
-* [Notes](./ds/notes/Distribution-File-System-DFS.html) | [Recap](./ds/recap/fundamental-of-distributed-system.html)
+* [Notes](./ds/notes/Distribution-File-System-DFS.html)
+* [Recap](./ds/recap/fundamental-of-distributed-system.html)
 * [Project](./ds/project/rpc.html)
 
 **Convex Optimization** *(Fall 2018)*

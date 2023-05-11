@@ -2,21 +2,23 @@
 layout: about
 title: About
 permalink: /
-subtitle: Ph.D. student at <a href='#'>Purdue University</a>.
+subtitle: >
+   <p><a href="mailto:{{ site.email | encode_email }}" title="email"><i class="fa fa-envelope fa-xs"></i></a> | <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar fa-xs"></i></a> | <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github fa-xs"></i></a> | <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fa fa-rss-square fa-xs"></i></a> </p>
+
+Focusing on Privacy, Machine Learning, Data Mining.
 
 profile:
   align: right
-  image: yuntao.jpg
+  image: yuntao.png
   image_circular: false # crops the image to make it circular
   address: >
-    <p>ytdu@purdue.edu</p>
     <p>305 N. University St.</p>
     <p>West Lafayette, USA</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+social: false  # includes social icons at the bottom of the page
 ---
 
 I am a Ph.D. student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui).
