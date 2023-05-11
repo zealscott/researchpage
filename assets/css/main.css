@@ -198,10 +198,9 @@ blockquote {
   margin-bottom: 5px;
   margin-top: 5px;
   font-family: monospace;
-}
-.profile .address p {
-  display: inline-block;
-  margin: 0;
+  text-align: center p;
+  text-align-display: inline-block;
+  text-align-margin: 0;
 }
 
 .profile.float-right {
