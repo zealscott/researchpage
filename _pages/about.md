@@ -1,17 +1,17 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <a href='#'>Purdue</a>. Address. Contacts. Moto. Etc.
+subtitle: Ph.D. student at <a href='#'>Purdue University</a>.
 
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image: yuntao.jpg
+  image_circular: false # crops the image to make it circular
   address: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>ytdu@purdue.edu</p>
+    <p>305 N. University St.</p>
+    <p>West Lafayette, USA</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
