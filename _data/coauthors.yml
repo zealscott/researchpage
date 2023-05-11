@@ -1,33 +1,33 @@
-"Yunjun":
-  - firstname: ["Gao"]
+"Gao":
+  - firstname: ["Yunjun"]
     url: https://person.zju.edu.cn/en/gaoyj_en
 
-"Lu":
-  - firstname: ["Chen"]
+"Chen":
+  - firstname: ["Lu"]
     url: https://person.zju.edu.cn/en/luchen
 
-"Jensen":
-  - firstname: [" Christian S."]
+"Christian S.":
+  - firstname: ["Jensen"]
     url: https://homes.cs.aau.dk/~csj/
 
-"Baihua": 
-  - firstname: ["Zheng"]
+"Zheng": 
+  - firstname: ["Baihua"]
     url: https://faculty.smu.edu.sg/profile/zheng-baihua-521
 
-"Jianxun":
-  - firstname: ["Lian"]
+"Lian":
+  - firstname: ["Jianxun"]
     url: https://www.microsoft.com/en-us/research/people/jialia
 
-"Xing":
-  - firstname: ["Xie"]
+"Xie":
+  - firstname: ["Xing"]
     url: https://www.microsoft.com/en-us/research/people/xingx/
 
 
-"Zhikun":
-  - firstname: ["Zhang"]
+"Zhang":
+  - firstname: ["Zhikun"]
     url: http://zhangzhk.com/
 
 
-"Ninghui":
-  - firstname: ["Li"]
+"Li":
+  - firstname: ["Ninghui"]
     url: https://www.cs.purdue.edu/homes/ninghui

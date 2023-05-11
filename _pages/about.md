@@ -3,15 +3,15 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-   <a href="mailto:{{ site.email | encode_email }}" title="email"><i class="fa fa-envelope"></i></a> <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>  <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>  <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fa fa-rss-square"></i></a>
+   <a href="mailto:{{ site.email | encode_email }}" title="email"><i class="fas fa-envelope"></i></a> <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>  <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fab fa-github"></i></a>  <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fas fa-rss-square"></i></a>
 
 profile:
   align: right
   image: yuntao.png
   image_circular: true # crops the image to make it circular
   address:
-    # <p>305 N. University St.</p>
-    # <p>West Lafayette, USA</p>
+    <p>305 N. University St.</p>
+    <p>West Lafayette, USA</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
