@@ -3,12 +3,12 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-   sdfsdf
+   <a href="mailto:{{ site.email | encode_email }}" title="email"><i class="fa fa-envelope"></i></a> <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>  <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github"></i></a>  <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fa fa-rss-square"></i></a>
 
 profile:
   align: right
   image: yuntao.png
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   address: >
     <p>305 N. University St.</p>
     <p>West Lafayette, USA</p>
@@ -26,7 +26,7 @@ I work on data privacy and security, especially on differential privacy, secure 
 
 I have been very fortunate to work with Prof. [Yunjun Gao](https://person.zju.edu.cn/en/gaoyj_en) at Zhejiang University <img src='/assets/img/zju_logo.svg' style="width: 4em;">, with Prof. [Zhikun Zhang](http://zhangzhk.com/) at Stanford University <img src='/assets/img/stanford_logo.svg' style="width: 4em;">, with Prof. [Christian S. Jensen](https://homes.cs.aau.dk/~csj/) at Aalborg University <img src='/assets/img/aau_logo.svg' style="width: 4em;">,  with Prof. [Baihua Zheng](https://faculty.smu.edu.sg/profile/zheng-baihua-521) at Singapore Management University <img src='/assets/img/smu_logo.svg' style="width: 3.5em;">, with Dr. [Jianxun Lian](https://www.microsoft.com/en-us/research/people/jialia) and Dr. [Xing Xie](https://www.microsoft.com/en-us/research/people/xingx/) at [Microsoft Research Asia](https://www.msra.cn/) <img src='/assets/img/microsoft_logo.svg' style="width: 4em;">.
 
-<a href="mailto:{{ site.email | encode_email }}" title="email"><i class="fa fa-envelope fa-xs"></i></a> | <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar fa-xs"></i></a> | <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fa-brands fa-github fa-xs"></i></a> | <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fa fa-rss-square fa-xs"></i></a>
+
 
 <!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
 
