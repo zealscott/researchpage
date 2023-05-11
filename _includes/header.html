@@ -85,8 +85,7 @@
               {%- endif -%}
               {% endfor -%}
               
-              <!-- blog
-              {% if site.blog_nav_title %}
+              <!-- {% if site.blog_nav_title %} -->
               <!-- Blog -->
               <!-- <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/blog/' | relative_url }}">{{ site.blog_nav_title }}
@@ -95,9 +94,9 @@
                   {%- endif -%}
                 </a>
               </li>
-              {%- endif %}
-              {%- if site.enable_darkmode %} --> -->
+              {%- endif %} -->
 
+              {%- if site.enable_darkmode %}
               <!-- Toogle theme mode -->
               <li class="toggle-container">
                 <button id="light-toggle" title="Change theme">
