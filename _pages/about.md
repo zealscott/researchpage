@@ -9,9 +9,9 @@ profile:
   align: right
   image: yuntao.png
   image_circular: true # crops the image to make it circular
-  address: >
-    <p>305 N. University St.</p>
-    <p>West Lafayette, USA</p>
+  address:
+    # <p>305 N. University St.</p>
+    # <p>West Lafayette, USA</p>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
