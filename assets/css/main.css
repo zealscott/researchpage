@@ -90,7 +90,7 @@ body.sticky-bottom-footer {
 }
 
 .profile img {
-  width: 100%;
+  width: 75%;
 }
 
 /******************************************************************************
@@ -192,7 +192,7 @@ blockquote {
 }
 
 .profile {
-  width: 75%;
+  width: 100%;
 }
 .profile .address {
   margin-bottom: 5px;
