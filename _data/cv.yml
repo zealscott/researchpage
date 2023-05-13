@@ -53,12 +53,9 @@
   contents:
     - title: Conference Reviewer
       items: 
-        - The AAAI Conference on Artificial Intelligence (AAAI): >
-          2023.
-        - ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): >
-          2023.
-        - International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIRAP): > 
-          2023.
+        - "The AAAI Conference on Artificial Intelligence (AAAI): 2023."
+        - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023."
+        - "International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIRAP): 2023."
     - title: Journal Reviewer
       items:
         - IEEE Transactions on Knowledge and Data Engineering (TKDE)
