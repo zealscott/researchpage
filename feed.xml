@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://research.zealscott.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://research.zealscott.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-13T03:24:45+00:00</updated><id>https://research.zealscott.com/feed.xml</id><title type="html">Yuntao Du @ Purdue</title><subtitle>A research website of Yuntao Du. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="https://research.zealscott.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://research.zealscott.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2023-05-13T03:41:35+00:00</updated><id>https://research.zealscott.com/feed.xml</id><title type="html">Yuntao Du @ Purdue</title><subtitle>A research website of Yuntao Du. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Trajectory Synthesis with Local Differential Privacy</title><link href="https://research.zealscott.com/blog/2023/04/22/LDPTrace/" rel="alternate" type="text/html" title="Trajectory Synthesis with Local Differential Privacy" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://research.zealscott.com/blog/2023/04/22/LDPTrace</id><content type="html" xml:base="https://research.zealscott.com/blog/2023/04/22/LDPTrace/"><![CDATA[<p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2302.06180">work</a> which will be represented at <a href="https://vldb.org/2023/">VLDB 2023</a>. Code and datasets are available at <a href="https://github.com/zealscott/LDPTrace">Github</a>.</p>
 
 <h1 id="introduction">Introduction</h1>
@@ -6,7 +6,7 @@
 <p>Trajectory data is widely used for many real-world applications, such as tracking the spread of the disease through people’s movement patterns and providing personalized location-based services based on travel preference. However, privacy concerns and data protection regulations have limited the extent to which this data is shared and utilized. Current <a href="https://en.wikipedia.org/wiki/Differential_privacy">differential privacy (DP)</a> techniques rely on a <em>trustworthy aggregator</em> to collect users’ raw trajectories, which still suffer from the risk of data breaches from untrustworthy data curators.</p>
 
 <div class="row justify-content-md-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
         <figure>
 
   <picture>
@@ -38,7 +38,7 @@
 <p>Instead of perturbing each trajectory individually, we aim to extract the <strong>key movement patterns</strong> of each user and use them to synthesize privacy-preserving and realistic trajectories. Specifically, LDPTrace approaches trajectory synthesis as a generative process, constructing a probabilistic model based on users’ transition records to estimate the global moving patterns. The key movement patterns are locally extracted from raw trajectory and perturbed/uploaded with OUE<d-cite key="oue"></d-cite> protocol. The overall framework is illustrated as below:</p>
 
 <div class="row justify-content-md-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
         <figure>
 
   <picture>
@@ -87,7 +87,7 @@
 <p>After getting the three global spatial features from trajectories, we first combine the intra-trajectory mobility with virtual start/end mobility, and utilize random walk to generate authentic trajectories from them. Here are the main steps of our synthesis algorithm:</p>
 
 <div class="row justify-content-md-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
         <figure>
 
   <picture>
@@ -119,7 +119,7 @@
 <p>We conduct extensive experiments on four benchmark trajectory datasets (three of them are released in our <a href="https://github.com/zealscott/LDPTrace">repository</a>). For utility metrics, we follow AdaTrace<d-cite key="adtrace"></d-cite> and comprehensively evaluate our method with various metrics from global level, trajectory level to semantic level. From fair comparison, we discard the auxiliary temporal and POI information in NGRAM, and only leverage physical distance to ensure the closeness between original and sampled n-grams in geospatial space. The results show that LDPTrace outperform the baseline by a large margin.</p>
 
 <div class="row justify-content-md-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
         <figure>
 
   <picture>
@@ -148,7 +148,7 @@
 the average running time of each component, as show in the following figure. We find that LDPTrace is a very efficient privacy-preserving trajectory publication framework, which is more than 300 times faster than NGRAM.</p>
 
 <div class="row justify-content-md-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
         <figure>
 
   <picture>
@@ -176,7 +176,7 @@ the average running time of each component, as show in the following figure. We 
 <p>We also investigate LDPTrace’s resistance to two common attacks, namely re-identification attack and outlier attack, which are defined in this paper<d-cite key="adtrace"></d-cite>. The results indicate that LDPTrace has impressive ability to resist these two attacks: more than 88% trajectories can be successfully protected in re-identification attack, and all trajectories are hidden from outliers when the privacy parameter changes its value from 2 to 10. On the contrary, NGRAM cannot provide provable protections to these attacks, especially when the demand of protection is more strict. We contribute the superiority of LDPTrace to the synthesis design: since the published trajectories do not resemble any real trajectory, it is much more difficult for attackers to identify traces that they are interested in.</p>
 
 <div class="row justify-content-md-center">
-    <div class="col-sm mt-3 mt-md-0">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
         <figure>
 
   <picture>
