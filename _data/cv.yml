@@ -5,15 +5,15 @@
       institution: Purdue University, West Lafayette, United States
       year: 2028 (expected)
       description:
-        - Advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui).
+        - Advised by Prof. <a href="https://www.cs.purdue.edu/homes/ninghui">Ninghui Li</a>.
     
     - title: M.E. in Computer Technology
       institution: Zhejiang University, Hangzhou, China
       year: 2023
       description:
         - Graduated with the highest distinction.
-        - Advised by Prof. [Yunjun Gao](https://person.zju.edu.cn/en/gaoyj_en).
-    
+        - Advised by Prof. 
+        
     - title: B.E. in Data Science
       institution: East China Normal University, Shanghai, China
       year: 2020
@@ -27,7 +27,7 @@
       institution: Microsoft Research Asia, Beijing, China.
       year: 2022
       description:
-        - Hosted by Dr. [Jianxun Lian](https://www.microsoft.com/en-us/research/people/jialia) and Dr. [Xing Xie](https://www.microsoft.com/en-us/research/people/xingx/).
+        - Hosted by Dr. <a href="https://www.microsoft.com/en-us/research/people/jialia">Jianxun Lian</a> and Dr. <a href="https://www.microsoft.com/en-us/research/people/xingx/">Xing Xie</a>.
 
 - title: Honors and Awards
   type: time_table
@@ -53,9 +53,12 @@
   contents:
     - title: Conference Reviewer
       items: 
-        - The AAAI Conference on Artificial Intelligence (AAAI): 2023.
-        - ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023.
-        - International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIRAP): 2023.
+        - The AAAI Conference on Artificial Intelligence (AAAI): >
+          2023.
+        - ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): >
+          2023.
+        - International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIRAP): > 
+          2023.
     - title: Journal Reviewer
       items:
         - IEEE Transactions on Knowledge and Data Engineering (TKDE)
