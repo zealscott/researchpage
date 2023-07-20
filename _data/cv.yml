@@ -12,7 +12,7 @@
       year: 2023
       description:
         - Graduated with the highest distinction.
-        - Advised by Prof. 
+        - Advised by Prof. <a href="https://person.zju.edu.cn/en/gaoyj_en">Yunjun Gao</a>.
         
     - title: B.E. in Data Science
       institution: East China Normal University, Shanghai, China
@@ -54,9 +54,10 @@
   contents:
     - title: Conference Reviewer
       items: 
-        - "The AAAI Conference on Artificial Intelligence (AAAI): 2023."
+        - "The AAAI Conference on Artificial Intelligence (AAAI): 2023, 2024"
         - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023."
         - "International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIR-AP): 2023."
+        - "International Conference on Neural Information Processing (ICONIP): 2023."
     - title: Journal Reviewer
       items:
         - IEEE Transactions on Knowledge and Data Engineering (TKDE)
