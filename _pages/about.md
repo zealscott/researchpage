@@ -23,7 +23,7 @@ I am a PhD student in computer science at Purdue University, advised by Prof. [N
 
 I’m interested in Differential Privacy and Privacy in Machine Learning, especially on the privacy issues of generative models:
 
-- **(Differentially Private) Data Synthesis**: privacy metrics ([arXiv](https://arxiv.org/abs/2402.06806)), data synthesis ([VLDB23](https://arxiv.org/abs/2302.06180)).
+(Differentially Private) Data Synthesis: privacy metrics ([arXiv](https://arxiv.org/abs/2402.06806)), data synthesis ([VLDB23](https://arxiv.org/abs/2302.06180)).
 
 
 
