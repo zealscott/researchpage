@@ -2,9 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: >
-   <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a> <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a> <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
-
+subtitle:
 profile:
   align: right
   image: yuntao.png
@@ -12,6 +10,7 @@ profile:
   address:
     # <p>305 N. University St.</p>
     # <p>West Lafayette, USA</p>
+    <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a> <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a> <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
@@ -24,6 +23,7 @@ I am a PhD student in computer science at Purdue University, advised by Prof. [N
 I’m interested in Differential Privacy and Privacy in Machine Learning, especially on the privacy issues of generative models:
 
 - **(Differentially Private) Data Synthesis**: privacy metrics ([arXiv](https://arxiv.org/abs/2402.06806)), data synthesis ([VLDB23](https://arxiv.org/abs/2302.06180)).
+- **Membership Inference Attack on Generative Models**: ongoing project.
 
 
 
