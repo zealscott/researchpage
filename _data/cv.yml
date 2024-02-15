@@ -34,11 +34,13 @@
   contents:
     - year: 2023
       items: 
-        - SIGIR Student Travel Grant
         - Ross Fellowship, Purdue University
         - Herbold Scholarship, Purdue University
         - Presidential Doctoral Excellence Awards, Purdue University
+        - Excellent Masters Dissertation, Chinese Institute of Electronic
+        - Award of Excellent in Star of Tomorrow Internship, Microsoft Research Asia
         - Provincial Outstanding Graduates, Zhejiang University
+        - SIGIR Student Travel Grant
     - year: 2022
       items: 
         - National Scholarship, Zhejiang University
@@ -55,11 +57,12 @@
     - title: Conference Reviewer
       items: 
         - "The AAAI Conference on Artificial Intelligence (AAAI): 2023, 2024"
-        - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023."
+        - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023, 2024"
         - "International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIR-AP): 2023."
-        - "International Conference on Neural Information Processing (ICONIP): 2023."
     - title: Journal Reviewer
       items:
         - IEEE Transactions on Knowledge and Data Engineering (TKDE)
         - ACM Transactions on Recommender Systems (TORS)
-
+    - title: Subreviewer
+        - "ACM Conference on Data and Application Security and Privacy (CODASPY): 2024"
+        - "International Conference on Neural Information Processing (ICONIP): 2023."

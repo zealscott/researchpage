@@ -3,7 +3,10 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-   <a href="mailto:{{ site.email | encode_email }}" title="email"><i class="fas fa-envelope"></i></a> <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>  <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fab fa-github"></i></a>  <a href="{{ site.baseurl }}/feed.xml" title="RSS Feed"><i class="fas fa-rss-square"></i></a>
+   <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> 
+   <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a>  
+   <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a>  
+   <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
 
 profile:
   align: right
@@ -19,12 +22,16 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-I am a Ph.D. student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui).
+I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui).
 
-I work on data privacy and security, especially on differential privacy and trustworthy machine learning. 
+I’m interested in Differential Privacy and Privacy in Machine Learning, especially on the privacy issues of generative models:
+
+- **(Differentially Private) Data Synthesis**: privacy metrics ([arXiv](https://arxiv.org/abs/2402.06806)), data synthesis ([VLDB23](https://arxiv.org/abs/2302.06180)).
 
 
-I have been very fortunate to work with Prof. [Yunjun Gao](https://person.zju.edu.cn/en/gaoyj_en) at Zhejiang University <img src='/assets/img/zju_logo.svg' style="width: 4em;">, with Prof. [Zhikun Zhang](http://zhangzhk.com/) at Stanford University <img src='/assets/img/stanford_logo.svg' style="width: 4em;">, with Prof. [Christian S. Jensen](https://homes.cs.aau.dk/~csj/) at Aalborg University <img src='/assets/img/aau_logo.svg' style="width: 4em;">,  with Prof. [Baihua Zheng](https://faculty.smu.edu.sg/profile/zheng-baihua-521) at Singapore Management University <img src='/assets/img/smu_logo.svg' style="width: 3.5em;">, with Dr. [Jianxun Lian](https://www.microsoft.com/en-us/research/people/jialia) and Dr. [Xing Xie](https://www.microsoft.com/en-us/research/people/xingx/) at [Microsoft Research Asia](https://www.msra.cn/) <img src='/assets/img/microsoft_logo.svg' style="width: 4em;">.
+
+
+<!-- I have been very fortunate to work with Prof. [Yunjun Gao](https://person.zju.edu.cn/en/gaoyj_en) at Zhejiang University <img src='/assets/img/zju_logo.svg' style="width: 4em;">, with Prof. [Zhikun Zhang](http://zhangzhk.com/) at Stanford University <img src='/assets/img/stanford_logo.svg' style="width: 4em;">, with Prof. [Christian S. Jensen](https://homes.cs.aau.dk/~csj/) at Aalborg University <img src='/assets/img/aau_logo.svg' style="width: 4em;">,  with Prof. [Baihua Zheng](https://faculty.smu.edu.sg/profile/zheng-baihua-521) at Singapore Management University <img src='/assets/img/smu_logo.svg' style="width: 3.5em;">, with Dr. [Jianxun Lian](https://www.microsoft.com/en-us/research/people/jialia) and Dr. [Xing Xie](https://www.microsoft.com/en-us/research/people/xingx/) at [Microsoft Research Asia](https://www.msra.cn/) <img src='/assets/img/microsoft_logo.svg' style="width: 4em;">. -->
 
 
 
