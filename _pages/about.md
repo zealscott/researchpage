@@ -3,10 +3,7 @@ layout: about
 title: About
 permalink: /
 subtitle: >
-   <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> 
-   <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a>  
-   <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a>  
-   <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
+   <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a> <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a> <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
 
 profile:
   align: right
