@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2023-04-13 15:59:00-0400
+date: 2024-02-13 21:59:00-0400
 inline: true
 related_posts: false
 ---
 
-One paper is accepted by SIGIR 2023 on robust knowledge-aware recommendation!
+We propose a principled way to assess the data synthesis on fidelity, privacy and utility. Check it out on [arXiv](https://arxiv.org/abs/2402.06806)!
