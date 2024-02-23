@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://research.zealscott.com/sitemap.xml
+Sitemap: https://zealscott.com/sitemap.xml
