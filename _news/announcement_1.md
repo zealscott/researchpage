@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper is accepted by SIGIR on robust knowledge-aware recommendation!
+One paper is accepted by SIGIR 2023 on robust knowledge-aware recommendation!

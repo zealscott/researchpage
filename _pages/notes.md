@@ -4,7 +4,7 @@ permalink: /notes/
 title: Notes
 description: All of my notes are available with GitBook. Feel free to contact me if you want the PDF version.
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 

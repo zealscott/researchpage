@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-One paper is accepted by VLDB on local differential privacy!
+One paper is accepted by VLDB 2023 on local differential privacy!
