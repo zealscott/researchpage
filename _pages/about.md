@@ -10,12 +10,12 @@ profile:
   address:
     # <p>305 N. University St.</p>
     # <p>West Lafayette, USA</p>
-    <div style="text-align: center;">
+    # <div style="text-align: center;">
     <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> 
     <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a>  
     <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a>  
     <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
-    </div>
+    # </div>
 
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
