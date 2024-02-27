@@ -20,7 +20,7 @@ nav: false
 
 {%- for y in page.topics %}
   <h3 class="pubyear">{{y}}</h3>
-  {% bibliography -f {{ site.scholar.bibliography }} --sort_by year --order descending --query @*[topic={{y}}] %}
+  {% bibliography -f {{ site.scholar.bibliography }} --sort_by year --order descending --query @*[topics={{y}}] %}
 {% endfor %}
 
 
