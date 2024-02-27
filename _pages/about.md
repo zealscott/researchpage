@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: (Provable) Privacy Analysis of Generative Models
+subtitle: Security & Privacy | (Provable) Privacy Analysis of Generative Models
 profile:
   align: right
   image: yuntao.png
@@ -23,14 +23,14 @@ profile:
 news: true  # includes a list of news items
 latest_posts: true  # includes a list of the newest posts
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true  # includes social icons at the bottom of the page
+social: false  # includes social icons at the bottom of the page
 ---
 
 I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). Here is my [CV (until Feb 23, 2024)](https://zealscott.com/files/yuntao_resume.pdf).
 
 I’m interested in Differential Privacy and Privacy in Machine Learning, especially on the privacy issues of generative models:
 
-- **(Differentially Private) Data Synthesis**: privacy metrics ([arXiv](https://arxiv.org/abs/2402.06806)), data synthesis ([VLDB23](https://arxiv.org/abs/2302.06180)).
+- **(Differentially Private) Data Synthesis**: privacy metrics [[arXiv](https://arxiv.org/abs/2402.06806)], data synthesis [[VLDB23](https://arxiv.org/abs/2302.06180)].
 - **Membership Inference Attack**.
 
 My research has been recognized and supported by the [Herbold Scholarship](https://www.bobherbold.com/) (2023-2024), [Ross Fellowship](https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html) (2023-2027), [Presidential Doctoral Excellence Awards](https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html) (2023-2027).
