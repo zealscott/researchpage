@@ -850,6 +850,11 @@ nav[data-toggle=toc] .nav-link.active:hover {
     top: 0;
   }
 }
+/* change the font */
+body {
+  font-family: "Nunito", sans-serif;
+}
+
 /*******************************************************************************
  * Style overrides for distill blog posts.
  ******************************************************************************/
