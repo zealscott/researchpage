@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Security & Privacy | (Provable) Privacy Analysis of Generative Models
+subtitle: Data Privacy
 profile:
   align: right
   image: yuntao.png
