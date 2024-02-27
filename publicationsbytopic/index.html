@@ -43,11 +43,6 @@
 
     <!-- Dark Mode -->
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
-
-    <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/dark_mode.js"></script>
-    
 
   </head>
 
@@ -82,6 +77,9 @@
                 <a class="nav-link" href="/resume/">Resume</a>
               </li>
               <li class="nav-item active">
+                <a class="nav-link" href="/publicationsbyyear/">Publications<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
                 <a class="nav-link" href="/publications/">Publications<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item ">
@@ -95,13 +93,6 @@
               <!-- <li class="nav-item ">
                 <a class="nav-link" href="/blog/">Blog</a>
               </li> -->
-              <!-- Toogle theme mode -->
-              <li class="toggle-container">
-                <button id="light-toggle" title="Change theme">
-                  <i class="fas fa-moon"></i>
-                  <i class="fas fa-sun"></i>
-                </button>
-              </li>
             </ul>
           </div>
         </div>
@@ -129,9 +120,20 @@
 
           <article>
             <!-- _pages/publications.md -->
+
+<p>
+<a href="/publicationsbytopic/">
+<button type="button" class="btn waves-effect waves-light" style="outline:none">By Topic</button>
+</a> 
+<a href="/publicationsbyyear/">
+<button type="button" class="btn waves-effect waves-light" style="outline:none">By Year</button>
+</a>
+</p>
+
 <div class="publications">
   <h3 class="pubyear">Privacy Analysis</h3>
-  <ol class="bibliography">
+  <h2 class="bibliography">Conference Articles</h2>
+<ol class="bibliography">
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -174,128 +176,6 @@
           <div class="links">
             <a href="http://arxiv.org/abs/https://arxiv.org/abs/2304.14987" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
             <a href="https://github.com/xj-zhu98/KRDN" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE23_Model" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">Finding Materialized Models for Model Reuse</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 preview">
-<figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-</div>
-
-        <!-- Entry bib key -->
-        <div id="VLDB23_LDPTrace" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
-          <span class="more-authors" title="click to view 4 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">4 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
-            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -606,59 +486,6 @@
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE22_MetaKG22" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2022
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">ICDE</abbr></div>
 
         <!-- Entry bib key -->
@@ -699,6 +526,184 @@
           <div class="links">
             <a href="https://ieeexplore.ieee.org/document/9458936" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
             <a href="https://github.com/ZJU-DAILY/E2DTC" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+</ol>
+<h2 class="bibliography">Journal Articles</h2>
+<ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE23_Model" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">Finding Materialized Models for Model Reuse</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 preview">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+</div>
+
+        <!-- Entry bib key -->
+        <div id="VLDB23_LDPTrace" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
+          <span class="more-authors" title="click to view 4 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">4 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
+            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE22_MetaKG22" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2022
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -766,7 +771,8 @@
 </ol>
 
   <h3 class="pubyear">Data Privacy</h3>
-  <ol class="bibliography">
+  <h2 class="bibliography">Conference Articles</h2>
+<ol class="bibliography">
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -809,128 +815,6 @@
           <div class="links">
             <a href="http://arxiv.org/abs/https://arxiv.org/abs/2304.14987" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
             <a href="https://github.com/xj-zhu98/KRDN" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE23_Model" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">Finding Materialized Models for Model Reuse</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 preview">
-<figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-</div>
-
-        <!-- Entry bib key -->
-        <div id="VLDB23_LDPTrace" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
-          <span class="more-authors" title="click to view 4 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">4 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
-            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -1241,59 +1125,6 @@
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE22_MetaKG22" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2022
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">ICDE</abbr></div>
 
         <!-- Entry bib key -->
@@ -1334,6 +1165,184 @@
           <div class="links">
             <a href="https://ieeexplore.ieee.org/document/9458936" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
             <a href="https://github.com/ZJU-DAILY/E2DTC" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+</ol>
+<h2 class="bibliography">Journal Articles</h2>
+<ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE23_Model" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">Finding Materialized Models for Model Reuse</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 preview">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+</div>
+
+        <!-- Entry bib key -->
+        <div id="VLDB23_LDPTrace" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
+          <span class="more-authors" title="click to view 4 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">4 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
+            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE22_MetaKG22" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2022
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -1401,7 +1410,8 @@
 </ol>
 
   <h3 class="pubyear">Recommender Systems</h3>
-  <ol class="bibliography">
+  <h2 class="bibliography">Conference Articles</h2>
+<ol class="bibliography">
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -1444,128 +1454,6 @@
           <div class="links">
             <a href="http://arxiv.org/abs/https://arxiv.org/abs/2304.14987" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
             <a href="https://github.com/xj-zhu98/KRDN" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE23_Model" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">Finding Materialized Models for Model Reuse</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 preview">
-<figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-</div>
-
-        <!-- Entry bib key -->
-        <div id="VLDB23_LDPTrace" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
-          <span class="more-authors" title="click to view 4 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">4 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
-            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -1876,59 +1764,6 @@
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE22_MetaKG22" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2022
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">ICDE</abbr></div>
 
         <!-- Entry bib key -->
@@ -1969,6 +1804,184 @@
           <div class="links">
             <a href="https://ieeexplore.ieee.org/document/9458936" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
             <a href="https://github.com/ZJU-DAILY/E2DTC" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+</ol>
+<h2 class="bibliography">Journal Articles</h2>
+<ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE23_Model" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">Finding Materialized Models for Model Reuse</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 preview">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+</div>
+
+        <!-- Entry bib key -->
+        <div id="VLDB23_LDPTrace" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
+          <span class="more-authors" title="click to view 4 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">4 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
+            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE22_MetaKG22" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2022
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -2036,7 +2049,8 @@
 </ol>
 
   <h3 class="pubyear">Spatio-temporal Data Mining</h3>
-  <ol class="bibliography">
+  <h2 class="bibliography">Conference Articles</h2>
+<ol class="bibliography">
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -2079,128 +2093,6 @@
           <div class="links">
             <a href="http://arxiv.org/abs/https://arxiv.org/abs/2304.14987" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
             <a href="https://github.com/xj-zhu98/KRDN" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE23_Model" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">Finding Materialized Models for Model Reuse</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 preview">
-<figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-</div>
-
-        <!-- Entry bib key -->
-        <div id="VLDB23_LDPTrace" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
-          <span class="more-authors" title="click to view 4 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">4 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
-            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -2511,59 +2403,6 @@
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE22_MetaKG22" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2022
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">ICDE</abbr></div>
 
         <!-- Entry bib key -->
@@ -2604,6 +2443,184 @@
           <div class="links">
             <a href="https://ieeexplore.ieee.org/document/9458936" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
             <a href="https://github.com/ZJU-DAILY/E2DTC" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+</ol>
+<h2 class="bibliography">Journal Articles</h2>
+<ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE23_Model" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">Finding Materialized Models for Model Reuse</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 preview">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+</div>
+
+        <!-- Entry bib key -->
+        <div id="VLDB23_LDPTrace" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
+          <span class="more-authors" title="click to view 4 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">4 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
+            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE22_MetaKG22" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2022
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -2671,7 +2688,8 @@
 </ol>
 
   <h3 class="pubyear">Misc</h3>
-  <ol class="bibliography">
+  <h2 class="bibliography">Conference Articles</h2>
+<ol class="bibliography">
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
@@ -2714,128 +2732,6 @@
           <div class="links">
             <a href="http://arxiv.org/abs/https://arxiv.org/abs/2304.14987" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
             <a href="https://github.com/xj-zhu98/KRDN" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE23_Model" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">Finding Materialized Models for Model Reuse</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2 preview">
-<figure>
-
-  <picture>
-    
-    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
-    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
-    
-
-    <!-- Fallback to the original file -->
-    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-
-  </picture>
-
-</figure>
-</div>
-
-        <!-- Entry bib key -->
-        <div id="VLDB23_LDPTrace" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
-          <span class="more-authors" title="click to view 4 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">4 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
-            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
@@ -3146,59 +3042,6 @@
 <li>
 <!-- _layouts/bib.html -->
       <div class="row">
-        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE22_MetaKG22" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
-          <span class="more-authors" title="click to view 2 more authors" onclick="
-                var element = $(this);
-                element.attr('title', '');
-                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
-                var cursorPosition = 0;
-                var textAdder = setInterval(function(){
-                  element.text(more_authors_text.substring(0, cursorPosition + 1));
-                  if (++cursorPosition == more_authors_text.length){
-                    clearInterval(textAdder);
-                  }
-              }, '10');
-              ">2 more authors</span>
-</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          2022
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
-            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
         <div class="col-sm-2 abbr"><abbr class="badge">ICDE</abbr></div>
 
         <!-- Entry bib key -->
@@ -3239,6 +3082,184 @@
           <div class="links">
             <a href="https://ieeexplore.ieee.org/document/9458936" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
             <a href="https://github.com/ZJU-DAILY/E2DTC" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+</ol>
+<h2 class="bibliography">Journal Articles</h2>
+<ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE23_Model" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">Finding Materialized Models for Model Reuse</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        Minjun Zhao, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, Keyu Yang, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Yuntao Du, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 preview">
+<figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/publication_preview/VLDB23_LDPTrace-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/publication_preview/VLDB23_LDPTrace.jpg" class="preview z-depth-1 rounded" width="auto" height="auto" alt="VLDB23_LDPTrace.jpg" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+</div>
+
+        <!-- Entry bib key -->
+        <div id="VLDB23_LDPTrace" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">LDPTrace: Locally Differentially Private Trajectory Synthesis</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Yujia Hu, <a href="http://zhangzhk.com/" rel="external nofollow noopener" target="_blank">Zhikun Zhang</a>, and
+          <span class="more-authors" title="click to view 4 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '4 more authors' ? 'Ziquan Fang, Lu Chen, Baihua Zheng, Yunjun Gao' : '4 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">4 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2023
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2302.06180" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://zealscott.com/blog/2023/04/22/LDPTrace/" class="btn btn-sm z-depth-0" role="button">Blog</a>
+            <a href="https://github.com/zealscott/LDPTrace" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2 abbr"><abbr class="badge">TKDE</abbr></div>
+
+        <!-- Entry bib key -->
+        <div id="TKDE22_MetaKG22" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">MetaKG:  Meta-learning on Knowledge Graph for Cold-start Recommendation</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <em>Yuntao Du</em>, Xinjun Zhu, <a href="https://person.zju.edu.cn/en/luchen" rel="external nofollow noopener" target="_blank">Lu Chen</a>, and
+          <span class="more-authors" title="click to view 2 more authors" onclick="
+                var element = $(this);
+                element.attr('title', '');
+                var more_authors_text = element.text() == '2 more authors' ? 'Ziquan Fang, Yunjun Gao' : '2 more authors';
+                var cursorPosition = 0;
+                var textAdder = setInterval(function(){
+                  element.text(more_authors_text.substring(0, cursorPosition + 1));
+                  if (++cursorPosition == more_authors_text.length){
+                    clearInterval(textAdder);
+                  }
+              }, '10');
+              ">2 more authors</span>
+</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          2022
+        </div>
+        <div class="periodical">
+          
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+            <a href="http://arxiv.org/abs/https://arxiv.org/abs/2202.03851" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
+            <a href="https://github.com/ZJU-DAILY/MetaKG" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
           </div>
           
           <div class="badges">
