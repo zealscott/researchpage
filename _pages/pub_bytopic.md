@@ -2,7 +2,7 @@
 layout: page
 permalink: /publicationsbytopic/
 title: Publications
-topics: [Privacy Analysis, Data Privacy, Recommender Systems, Spatio-temporal Data Mining, Misc]
+topics: [Data Privacy, Recommender Systems, Spatio-temporal Data Mining, Misc]
 nav: false
 ---
 <!-- _pages/publications.md -->
@@ -18,9 +18,17 @@ nav: false
 
 <div class="publications">
 
-{%- for y in page.topics %}
+<!-- {%- for y in page.topics %}
   <h3 class="pubyear">{{y}}</h3>
   {% bibliography -f {{ site.scholar.bibliography }} --sort_by year --order descending --query @*[topics={{y}}] %}
+{% endfor %} -->
+
+{%- for y in page.topics %}
+  <h3 class="pubyear">{{y}}</h3>
+  {%- assign bibliography = site.bibliography | where_exp: "item", "item.topics == y" -%}
+  {%- for item in bibliography %}
+    {% cite item --file {{ site.scholar.bibliography }} --sort_by year --order descending %}
+  {%- endfor %}
 {% endfor %}
 
 
