@@ -855,6 +855,10 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+h3.pubyear {
+  margin-bottom: 30px; /* Adjust this value as needed */
+}
+
 /*******************************************************************************
  * Style overrides for distill blog posts.
  ******************************************************************************/
