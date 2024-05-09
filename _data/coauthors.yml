@@ -1,3 +1,7 @@
+"Li":
+  - firstname: ["Ninghui"]
+    url: https://www.cs.purdue.edu/homes/ninghui
+
 "Gao":
   - firstname: ["Yunjun"]
     url: https://person.zju.edu.cn/en/gaoyj_en
@@ -10,7 +14,7 @@
   - firstname: ["Jensen"]
     url: https://homes.cs.aau.dk/~csj/
 
-"Zheng": 
+"Zheng":
   - firstname: ["Baihua"]
     url: https://faculty.smu.edu.sg/profile/zheng-baihua-521
 
@@ -22,12 +26,6 @@
   - firstname: ["Xing"]
     url: https://www.microsoft.com/en-us/research/people/xingx/
 
-
 "Zhang":
   - firstname: ["Zhikun"]
     url: http://zhangzhk.com/
-
-
-"Li":
-  - firstname: ["Ninghui"]
-    url: https://www.cs.purdue.edu/homes/ninghui
