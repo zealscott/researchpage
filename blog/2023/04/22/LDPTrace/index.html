@@ -297,7 +297,7 @@
 
 <h2 id="effectiveness">Effectiveness</h2>
 
-<p>We conduct extensive experiments on four benchmark trajectory datasets (three of them are released in our <a href="https://github.com/zealscott/LDPTrace" rel="external nofollow noopener" target="_blank">repository</a>). For utility metrics, we follow AdaTrace<d-cite key="adtrace"></d-cite> and comprehensively evaluate our method with various metrics from global level, trajectory level to semantic level. From fair comparison, we discard the auxiliary temporal and POI information in NGRAM, and only leverage physical distance to ensure the closeness between original and sampled n-grams in geospatial space. The results show that LDPTrace outperform the baseline by a large margin.</p>
+<p>We conduct extensive experiments on four benchmark trajectory datasets (three of them are released in our <a href="https://github.com/zealscott/LDPTrace" rel="external nofollow noopener" target="_blank">repository</a>). For utility metrics, we follow AdaTrace<d-cite key="adatrace"></d-cite> and comprehensively evaluate our method with various metrics from global level, trajectory level to semantic level. From fair comparison, we discard the auxiliary temporal and POI information in NGRAM, and only leverage physical distance to ensure the closeness between original and sampled n-grams in geospatial space. The results show that LDPTrace outperform the baseline by a large margin.</p>
 
 <div class="row justify-content-md-center">
     <div class="col-sm mt-0 pb-0 mt-md-0">
@@ -354,7 +354,7 @@ the average running time of each component, as show in the following figure. We 
 
 <h2 id="attack-resilience">Attack resilience</h2>
 
-<p>We also investigate LDPTrace’s resistance to two common attacks, namely re-identification attack and outlier attack, which are defined in this paper<d-cite key="adtrace"></d-cite>. The results indicate that LDPTrace has impressive ability to resist these two attacks: more than 88% trajectories can be successfully protected in re-identification attack, and all trajectories are hidden from outliers when the privacy parameter changes its value from 2 to 10. On the contrary, NGRAM cannot provide provable protections to these attacks, especially when the demand of protection is more strict. We contribute the superiority of LDPTrace to the synthesis design: since the published trajectories do not resemble any real trajectory, it is much more difficult for attackers to identify traces that they are interested in.</p>
+<p>We also investigate LDPTrace’s resistance to two common attacks, namely re-identification attack and outlier attack, which are defined in this paper<d-cite key="adatrace"></d-cite>. The results indicate that LDPTrace has impressive ability to resist these two attacks: more than 88% trajectories can be successfully protected in re-identification attack, and all trajectories are hidden from outliers when the privacy parameter changes its value from 2 to 10. On the contrary, NGRAM cannot provide provable protections to these attacks, especially when the demand of protection is more strict. We contribute the superiority of LDPTrace to the synthesis design: since the published trajectories do not resemble any real trajectory, it is much more difficult for attackers to identify traces that they are interested in.</p>
 
 <div class="row justify-content-md-center">
     <div class="col-sm mt-0 pb-0 mt-md-0">
@@ -402,7 +402,7 @@ which achieves strong utility and efficiency simultaneously. Although the privac
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
-        © Copyright 2024 Yuntao  Du (杜云滔). Last updated: April 18, 2024.
+        © Copyright 2024 Yuntao  Du (杜云滔). Last updated: May 09, 2024.
       </div>
     </footer>
 
