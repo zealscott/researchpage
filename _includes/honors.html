@@ -1,0 +1,5 @@
+<!-- honors.html -->
+{% for honor in site.data.honors %}
+<div style="margin-bottom: 0.5em;">• <strong>{{ honor | split: ',' | first }}</strong>,{{ honor | split: ',' | slice: 1, 10 | join: ',' }}</div>
+{% endfor %} 
+<div style="margin-bottom: 2em;"></div> 

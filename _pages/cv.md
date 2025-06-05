@@ -1,8 +1,8 @@
 ---
-layout: cv
+layout: direct
 permalink: /resume/
 title: Resume
-nav: true
+nav: false
 nav_order: 1
-# cv_pdf: example_pdf.pdf
+cv_pdf: files/yuntao_resume.pdf
 ---

@@ -1,31 +1,43 @@
-"Li":
-  - firstname: ["Ninghui"]
-    url: https://www.cs.purdue.edu/homes/ninghui
+# "Li":
+#   - firstname: ["Ninghui"]
+#     url: https://www.cs.purdue.edu/homes/ninghui
 
-"Gao":
-  - firstname: ["Yunjun"]
-    url: https://person.zju.edu.cn/en/gaoyj_en
+# "Gao":
+#   - firstname: ["Yunjun"]
+#     url: https://person.zju.edu.cn/en/gaoyj_en
 
-"Chen":
-  - firstname: ["Lu"]
-    url: https://person.zju.edu.cn/en/luchen
+# "Chen":
+#   - firstname: ["Lu"]
+#     url: https://person.zju.edu.cn/en/luchen
+#   - firstname: ["Yuetian"]
+#     url: https://stry233.github.io/
 
-"Christian S.":
-  - firstname: ["Jensen"]
-    url: https://homes.cs.aau.dk/~csj/
+# "Christian S.":
+#   - firstname: ["Jensen"]
+#     url: https://homes.cs.aau.dk/~csj/
 
-"Zheng":
-  - firstname: ["Baihua"]
-    url: https://faculty.smu.edu.sg/profile/zheng-baihua-521
+# "Zheng":
+#   - firstname: ["Baihua"]
+#     url: https://faculty.smu.edu.sg/profile/zheng-baihua-521
 
-"Lian":
-  - firstname: ["Jianxun"]
-    url: https://www.microsoft.com/en-us/research/people/jialia
+# "Lian":
+#   - firstname: ["Jianxun"]
+#     url: https://www.microsoft.com/en-us/research/people/jialia
 
-"Xie":
-  - firstname: ["Xing"]
-    url: https://www.microsoft.com/en-us/research/people/xingx/
+# "Xie":
+#   - firstname: ["Xing"]
+#     url: https://www.microsoft.com/en-us/research/people/xingx/
 
-"Zhang":
-  - firstname: ["Zhikun"]
-    url: http://zhangzhk.com/
+# "Zhang":
+#   - firstname: ["Zhikun"]
+#     url: http://zhangzhk.com/
+#   - firstname: ["Kaiyuan"]
+#     url: https://kaiyuanzhang.com/
+
+# "Xiao":
+#   - firstname: ["Hanshen"]
+#     url: https://hanshen-xiao.github.io/
+
+# "Ribeiro":
+#   - firstname: ["Bruno"]
+#     url: https://www.cs.purdue.edu/homes/ribeirob/

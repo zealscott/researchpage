@@ -1,0 +1,19 @@
+- title: Conference Reviewer
+  items: 
+    - "International Conference on Learning Representations (ICLR): 2025."
+    - "International Conference on Artificial Intelligence and Statistics (AISTATS): 2025."
+    - "International Joint Conference on Neural Networks (IJCNN): 2025."
+    - "The AAAI Conference on Artificial Intelligence (AAAI): 2023 - 2025."
+    - "Table Representation Learning Workshop (TRL): 2024 - 2025."
+    - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR): 2023 - 2025."
+    - "ACM International Conference on Information and Knowledge Management (CIKM): 2024 - 2025."
+    - "International ACM SIGIR Conference on Information Retrieval in the Asia Pacific (SIGIR-AP): 2023 - 2025."
+- title: Journal Reviewer
+  items:
+    - "ACM Transactions on Privacy and Security (TOPS)"
+    - "IEEE Transactions on Knowledge and Data Engineering (TKDE)"
+    - "ACM Transactions on Recommender Systems (TORS)"
+- title: Subreviewer
+  items:
+    - "ACM Conference on Data and Application Security and Privacy (CODASPY): 2024"
+    - "International Conference on Neural Information Processing (ICONIP): 2023."

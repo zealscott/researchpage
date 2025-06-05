@@ -1,0 +1,9 @@
+<!-- services.html -->
+{% for service in site.data.services %}
+<div style="margin-bottom: 1em;">
+  <div style="font-weight: bold;">{{ service.title }}</div>
+  {% for item in service.items %}
+  <div style="margin-left: 1em; margin-bottom: 0.4em;">• {{ item }}</div>
+  {% endfor %}
+</div>
+{% endfor %} 

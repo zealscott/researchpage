@@ -2,6 +2,14 @@
  * Styles for the base elements of the theme.
  ******************************************************************************/
 
+// Global font settings
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
 // Typography
 
 p,
@@ -36,10 +44,10 @@ table {
 
 a,
 table.table a {
-  color: var(--global-theme-color);
+  color: #2a7ae2;
 
   &:hover {
-    color: var(--global-theme-color);
+    color: #2a7ae2;
     text-decoration: underline;
   }
 
@@ -950,9 +958,9 @@ nav[data-toggle="toc"] {
 }
 
 /* change the font */
-body {
-  font-family: "Nunito", sans-serif;
-}
+// body {
+//   font-family: "Nunito", sans-serif;
+// }
 
 
 // Custom CSS
