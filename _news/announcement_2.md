@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We introduce a highly efficient yet powerful membership inference attack called Imitative MIA (IMIA).
+We introduce a highly efficient yet powerful membership inference attack called [Imitative MIA](https://arxiv.org/abs/2509.06796).
