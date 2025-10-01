@@ -28,7 +28,7 @@ honors: true
 services: true
 ---
 
-I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). My research interests lie in Data Privacy and Privacy in Machine Learning. I am also broadly interested in analyzing emerging privacy risks arising from recent advances in AI. Here is my [CV](https://zealscott.com/files/yuntao_resume.pdf).
+I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). My research interests lie in **Data Privacy** and **Privacy in Machine Learning**. I am also broadly interested in analyzing emerging privacy and security risks arising from recent advances in AI. Here is my [CV](https://zealscott.com/files/Yuntao_Du_Resume.pdf).
 
 
 My research has been recognized and supported by the [Ross Fellowship](https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html) (2023-2027), [Presidential Doctoral Excellence Awards](https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html) (2023-2027), and [Herbold Scholarship](https://www.bobherbold.com/) (2023-2024).
