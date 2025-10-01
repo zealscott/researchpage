@@ -1,7 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zealscott.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zealscott.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-01T15:09:30+00:00</updated><id>https://zealscott.com/feed.xml</id><title type="html">Yuntao Du @ Purdue</title><subtitle>A research website of Yuntao Du. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">How to (principally) assess tabular data synthesis algorithms?</title><link href="https://zealscott.com/blog/2025/08/23/SynMeter/" rel="alternate" type="text/html" title="How to (principally) assess tabular data synthesis algorithms?" /><published>2025-08-23T00:00:00+00:00</published><updated>2025-08-23T00:00:00+00:00</updated><id>https://zealscott.com/blog/2025/08/23/SynMeter</id><content type="html" xml:base="https://zealscott.com/blog/2025/08/23/SynMeter/"><![CDATA[<p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2402.06806">work</a>, which will be presented at <a href="https://www.sigsac.org/ccs/CCS2025/">CCS 2025</a>. Code and datasets are available on <a href="https://github.com/zealscott/SynMeter">Github</a>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://zealscott.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://zealscott.com/" rel="alternate" type="text/html" hreflang="en" /><updated>2025-10-01T18:54:31+00:00</updated><id>https://zealscott.com/feed.xml</id><title type="html">Yuntao Du @ Purdue</title><subtitle>A research website of Yuntao Du. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Joint membership inference for machine learning models</title><link href="https://zealscott.com/blog/2025/CPMIA/" rel="alternate" type="text/html" title="Joint membership inference for machine learning models" /><published>2025-10-01T00:00:00+00:00</published><updated>2025-10-01T00:00:00+00:00</updated><id>https://zealscott.com/blog/2025/CPMIA</id><content type="html" xml:base="https://zealscott.com/blog/2025/CPMIA/"><![CDATA[<p>This is the gentle introduction to our <a href="http://arxiv.org/abs/2507.21412">work</a>, which will be presented at <a href="https://www.ndss-symposium.org/ndss2026/">NDSS 2026</a>. Code and datasets are available on <a href="https://github.com/zealscott/CPMIA">Github</a>.</p>
 
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
+
+<p>Membership inference attacks (MIAs) have become a standard way to evaluate the empirical privacy risks of machine learning models. The first modern MIA was introduced in 2017<d-cite key="sp17membership"></d-cite>, together with the concept of shadow training. 
+Over the past several years, many MIAs have been proposed for different model classes, e.g., image classifiers, GANs, diffusion models, and large language models, to name a few.</p>
+
+<p>All existing MIAs follow a one-by-one procedure: for each membership query instance, the adversary collects an attack signal (from black-box queries or white-box gradients) and outputs a membership prediction for that single instance. 
+At first glance, this approach appears reasonable, as the data instances in the training set could be assumed to be independently and identically distributed (i.i.d.), implying that the membership indicators Mi and Mj are marginally independent. 
+However, this independence assumption is <strong>violated</strong> when conditioning on the model’s output over the entire memberhsip query dataset. In this conditional setting, the membership indicators, although independent marginally, become dependent due to the collider effect induced by the model’s output, as shown below.</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+ <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2025-10-01-CPMIA/dependence-480.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2025-10-01-CPMIA/dependence-800.webp" />
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2025-10-01-CPMIA/dependence-1400.webp" />
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2025-10-01-CPMIA/dependence.png" class="img-fluid rounded z-depth-1" width="30%" height="auto" title="Statistical dependencies between query instances when conditional on model's output" onerror="this.onerror=null; $('.responsive-img-srcset').remove();" />
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+ Statistical dependencies between query instances when conditional on the model's output
+</div>
+
+<p>This intriguing observation sparked a key question for us: can we design a more powerful MIA by exploiting this inherent dependence between instances?</p>
+
+<h2 id="a-new-formulation-for-mia">A new formulation for MIA</h2>
+
+<p>To achieve this, we first re-examined the standard security game for MIAs. We found that the existing security game<d-cite key="csf18privacy"></d-cite> fails to distinguish a crucial detail: whether the attacker is allowed to train new shadow models using the query instances themselves. This distinction is critical, as it can lead to a significant difference in attack performance. Furthermore, we noticed a disconnect between this formal definition and common experimental practice, where attacks often process a whole set of query instances at once, not just a single one.
+To bridge this gap and clarify when it’s possible to leverage joint information, we reformulated the MIA threat model into two distinct scenarios: <strong>adaptive</strong> and <strong>non-adaptive</strong>.</p>
+
+<p>In the adaptive setting, the adversary receives the full query set and is then allowed to train new shadow models. This enables the attacker to leverage information about both <em>in</em> distribution (member) and <em>out</em> distribution (non-member) behaviors specific to the query set.</p>
+
+<p>It’s worth noting that some studies<d-cite key="sp22lira"></d-cite> refer to these settings as “offline” and “online,” respectively. We find this terminology potentially confusing, as their “offline” setting (no new training per query) is conceptually similar to “online algorithms” that process data sequentially. We therefore advocate using adaptive / non-adaptive to reduce ambiguity.</p>
+
+<h2 id="cascading-membership-inference-attack-cmia">Cascading Membership Inference Attack (CMIA)</h2>
+
+<p>Our first attack, the Cascading Membership Inference Attack (CMIA), is an attack-agnostic framework designed to exploit this membership dependence for a more powerful attack. However, capturing this dependence is not easy. By definition, the attacker doesn’t know the true membership of any query instance to begin with. We borrow the intuition behind Gibbs sampling: estimate a joint distribution from marginal distributions by iterative conditional updates. In our setting, an existing MIA provides approximate marginal membership probabilities for each instance. CMIA then iteratively refines membership predictions by conditioning on increasingly confident labels. Concretely, each cascading iteration works as follows:</p>
+
+<ol>
+  <li>Run the base MIA to obtain marginal membership scores for all query instances.</li>
+  <li>Fix the most confident predictions as pseudo membership labels.</li>
+  <li>Train <em>conditional</em> shadow models using those pseudo-labels to implicitly capture joint behaviors.</li>
+  <li>Repeat the process.</li>
+</ol>
+
+<p>CMIA can plug into any shadow-based MIA to boost its performance. Unlike full Gibbs sampling (which may require many iterations to converge to the joint distribution), CMIA tends to reach strong performance within just a few cascading steps.</p>
+
+<h2 id="proxy-membership-inference-attack-pmia">Proxy Membership Inference Attack (PMIA)</h2>
+
+<p>CMIA is powerful but relies on the adaptive setting, since it trains shadow models after seeing the query set. That makes it inapplicable in the non-adaptive setting, where the attacker cannot retrain on the queries.</p>
+
+<p>To address non-adaptive scenarios, we formalize the problem as Marginal MIA and derive the theoretically optimal attack strategy. Interestingly, we found that this theoretically optimal attack, which is based on a likelihood ratio test, provides a theoretical justification for why MIAs should focus on achieving a high True Positive Rate (TPR) at a very low False Positive Rate (FPR).</p>
+
+<p>But how do we approximate the <em>in</em> behavior for a query instance if we are not allowed to train shadow models on that instance? We propose a pragmatic solution: use <strong>proxy instances</strong>.</p>
+
+<p>An adversary can train shadow models before observing the query set; those shadow models have <em>in</em> behaviors for whatever data they trained on. By finding training examples (from the adversary’s available data) that are similar to a query instance, we can use those examples’ behaviors as proxies for the query instance’s <em>in</em> distribution. We design proxy-selection strategies at three granularities (global, class, and instance-level) and use them as proxies to construct the likelihood ratio test for attack.
+Despite the simplicity of this idea, PMIA performs surprisingly well and often outperforms existing non-adaptive methods by a substantial margin.</p>
+
+<h2 id="conclusion-a-new-frontier-for-mia">Conclusion: A new frontier for MIA</h2>
+
+<p>Our work opens a new avenue for improving membership inference by explicitly modeling dependencies between instances. We have only scratched the surface, yet the initial gains are significant. I believe there is substantial follow-up work to be done, and that exploring joint inference will reshape how MIAs (and their defenses) are designed.</p>
+
+<p>However, this increased power doesn’t come for free. CMIA, for instance, works by iteratively running the base attack. If the base attack is already computationally expensive (like LiRA<d-cite key="sp22lira"></d-cite>), CMIA’s overhead can be substantial. 
+Designing efficient but powerful joint-membership attacks is an important and open research question.</p>]]></content><author><name>Yuntao Du</name></author><summary type="html"><![CDATA[This is the gentle introduction to our work, which will be presented at NDSS 2026. Code and datasets are available on Github.]]></summary></entry><entry><title type="html">How to (principally) assess tabular data synthesis algorithms?</title><link href="https://zealscott.com/blog/2025/SynMeter/" rel="alternate" type="text/html" title="How to (principally) assess tabular data synthesis algorithms?" /><published>2025-08-25T00:00:00+00:00</published><updated>2025-08-25T00:00:00+00:00</updated><id>https://zealscott.com/blog/2025/SynMeter</id><content type="html" xml:base="https://zealscott.com/blog/2025/SynMeter/"><![CDATA[<p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2402.06806">work</a>, which will be presented at <a href="https://www.sigsac.org/ccs/CCS2025/">CCS 2025</a>. Code and datasets are available on <a href="https://github.com/zealscott/SynMeter">Github</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
 
 <p>Tabular data is one of the most widely used data structures across science, industry, and governance. As data-driven decision-making becomes the norm, sharing and publishing tabular data is increasingly important. However, sharing data raises serious privacy concerns. A promising solution is <em>data synthesis</em>, which generates synthetic data that mimics the real dataset while preserving privacy. Tabular data synthesis has been studied for years, with algorithms ranging from simple histograms to statistical models (e.g., probabilistic graphical models) to advanced deep learning methods (e.g., diffusion models and large language models). Broadly, synthesis algorithms can be divided into two categories:</p>
 
@@ -10,7 +85,7 @@
   <li><strong>Heuristically Private (HP) synthesizers.</strong> These methods do <strong>not</strong> satisfy DP. Instead, they aim to protect privacy <strong>empirically</strong> and are mostly proposed by the machine learning community. The most widely used example is CTGAN<d-cite key="nips19ctgan"></d-cite>, with recent improvements using diffusion models such as TabDDPM<d-cite key="icml23tabddpm"></d-cite>. Since HP synthesizers lack formal privacy guarantees, reliable privacy evaluation metrics become critical for assessing their risks.</li>
 </ul>
 
-<h1 id="proposed-evaluation-process">Proposed Evaluation Process</h1>
+<h2 id="proposed-evaluation-process">Proposed Evaluation Process</h2>
 
 <p>While so many synthesizers have been proposed, a comprehensive understanding of the strengths and weaknesses of different synthesizers remains elusive. DP synthesizers are rarely compared directly with HP ones, and there’s no standardized way to compare statistical methods against deep generative models. What’s more concerning is that different methods use different evaluation pipelines, making comparisons inconsistent. To address this, we propose a comprehensive evaluation process that works for both DP and HP synthesizers:</p>
 
@@ -21,40 +96,40 @@
   <li><em>Model evaluation</em>. The trained model generates synthetic data, which is then evaluated on three key aspects: <strong>fidelity</strong>, <strong>privacy</strong>, and <strong>utility</strong>.</li>
 </ol>
 
-<h1 id="what-makes-a-good-evaluation-metric">What Makes a Good Evaluation Metric?</h1>
+<h2 id="what-makes-a-good-evaluation-metric">What Makes a Good Evaluation Metric?</h2>
 
 <p>It is known that evaluating generative models is inherently difficult, and qualitative evaluation of tabular data through visual inspection is also infeasible.
 There are various evaluation metrics proposed, and different methods use distinct evaluation metrics, and they all claim that they are state-of-the-art.
 For example, many DP papers rely only on simple one/two-way query errors, while HP methods borrow metrics from image and text generation<d-cite key="iclr16evalgen"></d-cite> to measure fidelity. Even worse, some HP papers use similarity-based privacy metrics that do not align with the principles of differential privacy, leading to misleading conclusions about their privacy risks.</p>
 
-<h2 id="fidelity-evaluation-metrics">Fidelity Evaluation Metrics</h2>
+<h3 id="fidelity-evaluation-metrics">Fidelity Evaluation Metrics</h3>
 
 <p>Fidelity measures how closely synthetic data matches real data.
 Unlike images or text, where joint distributions are natural to evaluate, tabular data is often better measured through <em>marginal</em> distributions. However, current approaches use different statistical metrics for discrete and continuous attributes, making results hard to compare.</p>
 
 <p>We propose using <strong>Wasserstein distance</strong> to measure marginal similarity. It works consistently for discrete, continuous, or mixed attributes and provides a meaningful structural similarity metric. Interestingly, we found that under this unified metric, some newer DP synthesizers actually underperform compared to simpler statistical methods. However, without DP constraints, advanced models, especially diffusion-based ones, can achieve impressive fidelity and generate highly realistic data.</p>
 
-<h2 id="privacy-evaluation-metrics">Privacy Evaluation Metrics</h2>
+<h3 id="privacy-evaluation-metrics">Privacy Evaluation Metrics</h3>
 
 <p>We first observe that widely-used privacy evaluation metrics for HP synthesizers (e.g., Distance to Closest Record (DCR)<d-cite key="acml21ctgabgan"></d-cite>) are <strong>syntactic</strong>. That is, they are properties of the input/output dataset pair and are independent of the synthesis algorithm itself. Over the last decade, the privacy community has realized the limitations of such syntactic metrics (like k-anonymity) and has shifted towards semantic privacy definitions like Differential Privacy. Therefore, HP synthesizers evaluated with these syntactic metrics may provide a false sense of privacy. Furthermore, the widely used empirical privacy evaluation approach, i.e., membership inference attack (MIA)<d-cite key="sp17membership"></d-cite>, is not always effective for all types of tabular data synthesis.</p>
 
 <p>Therefore, we propose a new semantic privacy evaluation metric, based on the principles of differential privacy, that works for all types of synthesizers. Unlike MIA, which measures privacy risk from an adversary’s perspective, our approach directly approximates the leave-one-out distinguishability for all records in the training set and utilizes the maximum leakage as the privacy risk measurement.  We present extensive experiments showing that our metric, the Membership Disclosure Score (MDS), can faithfully identify the privacy risks of HP synthesizers and is more effective than MIA and other heuristic privacy metrics.</p>
 
-<h2 id="utility-evaluation-metrics">Utility Evaluation Metrics</h2>
+<h3 id="utility-evaluation-metrics">Utility Evaluation Metrics</h3>
 
 <p>Synthetic data is often used to train models for downstream tasks, such as machine learning prediction. However, unlike vision or NLP, where standardized benchmark models exist, the performance of tabular prediction can vary widely across different models. There’s still ongoing debate<d-cite key="nips23tabular"></d-cite> about whether deep learning even excels in tabular tasks. To mitigate this, we propose measuring the relative performance drop across several ML models when trained on synthetic versus real data. This relative drop serves as our measure of utility preservation.</p>
 
-<h2 id="model-tuning">Model Tuning</h2>
+<h3 id="model-tuning">Model Tuning</h3>
 
 <p>We also find that many synthesis algorithms are highly sensitive to their hyperparameters. Achieving optimal performance for each dataset requires careful tuning. However, most synthesizers do not provide a clear methodology for this tuning process. Therefore, we propose a unified model tuning objective that combines our proposed fidelity and utility metrics. We found that this tuning objective can significantly improve the performance of many synthesizers (especially deep learning-based ones) and enables fairer comparisons. We note that our tuning objective is by no means perfect and advocate for researchers to design specific tuning strategies tailored to their own synthesis algorithms.</p>
 
-<h1 id="discussion--conclusion">Discussion &amp; Conclusion</h1>
+<h2 id="discussion--conclusion">Discussion &amp; Conclusion</h2>
 
 <p>In this work, we carefully examine the limitations of existing evaluation metrics for tabular data synthesis and propose a systematic and principled framework for assessing the performance of both DP and HP synthesizers. We hope that future work on tabular data synthesis will adopt our proposed evaluation framework to enable better and fairer comparisons, helping to clearly identify the advantages and limitations of new advances in the field.</p>
 
-<p>However, while our paper makes a significant step toward a standardized evaluation and serves as a bridge to connect and compare DP and HP synthesis algorithms, it has its own limitations. For example, the computation of our privacy metric (MDS) is quite expensive, as it requires training many shadow models for an accurate privacy estimation. Nevertheless, we hope our work will inspire future research to design tabular data synthesis algorithms that achieve both high fidelity and strong privacy.</p>]]></content><author><name>Yuntao Du</name></author><summary type="html"><![CDATA[This is the gentle introduction to our work, which will be presented at CCS 2025. Code and datasets are available on Github.]]></summary></entry><entry><title type="html">Trajectory synthesis with local differential privacy</title><link href="https://zealscott.com/blog/2023/04/22/LDPTrace/" rel="alternate" type="text/html" title="Trajectory synthesis with local differential privacy" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://zealscott.com/blog/2023/04/22/LDPTrace</id><content type="html" xml:base="https://zealscott.com/blog/2023/04/22/LDPTrace/"><![CDATA[<p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2302.06180">work</a> which will be represented at <a href="https://vldb.org/2023/">VLDB 2023</a>. Code and datasets are available at <a href="https://github.com/zealscott/LDPTrace">Github</a>.</p>
+<p>However, while our paper makes a significant step toward a standardized evaluation and serves as a bridge to connect and compare DP and HP synthesis algorithms, it has its own limitations. For example, the computation of our privacy metric (MDS) is quite expensive, as it requires training many shadow models for an accurate privacy estimation. Nevertheless, we hope our work will inspire future research to design tabular data synthesis algorithms that achieve both high fidelity and strong privacy.</p>]]></content><author><name>Yuntao Du</name></author><summary type="html"><![CDATA[This is the gentle introduction to our work, which will be presented at CCS 2025. Code and datasets are available on Github.]]></summary></entry><entry><title type="html">Trajectory synthesis with local differential privacy</title><link href="https://zealscott.com/blog/2023/LDPTrace/" rel="alternate" type="text/html" title="Trajectory synthesis with local differential privacy" /><published>2023-04-22T00:00:00+00:00</published><updated>2023-04-22T00:00:00+00:00</updated><id>https://zealscott.com/blog/2023/LDPTrace</id><content type="html" xml:base="https://zealscott.com/blog/2023/LDPTrace/"><![CDATA[<p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2302.06180">work</a> which will be represented at <a href="https://vldb.org/2023/">VLDB 2023</a>. Code and datasets are available at <a href="https://github.com/zealscott/LDPTrace">Github</a>.</p>
 
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 
 <p>Trajectory data is widely used for many real-world applications, such as tracking the spread of the disease through people’s movement patterns and providing personalized location-based services based on travel preference. However, privacy concerns and data protection regulations have limited the extent to which this data is shared and utilized. Current <a href="https://en.wikipedia.org/wiki/Differential_privacy">differential privacy (DP)</a> techniques rely on a <em>trustworthy aggregator</em> to collect users’ raw trajectories, which still suffer from the risk of data breaches from untrustworthy data curators.</p>
 
@@ -84,9 +159,9 @@ Unlike images or text, where joint distributions are natural to evaluate, tabula
 
 <p>In contrast, <a href="https://en.wikipedia.org/wiki/Local_differential_privacy">local differential privacy (LDP)</a> allows users to directly share a noisy version of their data, provides a more practical setting and improved privacy properties. The only solution that meets the rigorous privacy requirements is NGRAM<d-cite key="ngram"></d-cite>. However, this approach suffers from poor global utility, auxiliary knowledge dependence, high computational overhead, and vulnerability to attacks. Therefore, we offer a new privacy-preserving paradigm to protect users’ trajectory data, named LDPTrace, to solve these issues while provides the provable guarantee of LDP.</p>
 
-<h1 id="our-approach">Our approach</h1>
+<h2 id="our-approach">Our approach</h2>
 
-<h2 id="overview">Overview</h2>
+<h3 id="overview">Overview</h3>
 
 <p>Instead of perturbing each trajectory individually, we aim to extract the <strong>key movement patterns</strong> of each user and use them to synthesize privacy-preserving and realistic trajectories. Specifically, LDPTrace approaches trajectory synthesis as a generative process, constructing a probabilistic model based on users’ transition records to estimate the global moving patterns. The key movement patterns are locally extracted from raw trajectory and perturbed/uploaded with OUE<d-cite key="oue"></d-cite> protocol. The overall framework is illustrated as below:</p>
 
@@ -114,7 +189,7 @@ Unlike images or text, where joint distributions are natural to evaluate, tabula
     The framework of LDPTrace.
 </div>
 
-<h2 id="key-movement-patterns">Key movement patterns</h2>
+<h3 id="key-movement-patterns">Key movement patterns</h3>
 
 <p>The probabilistic model consists of three key features:</p>
 
@@ -135,7 +210,7 @@ Unlike images or text, where joint distributions are natural to evaluate, tabula
   </li>
 </ol>
 
-<h2 id="trajectory-synthesis">Trajectory synthesis</h2>
+<h3 id="trajectory-synthesis">Trajectory synthesis</h3>
 
 <p>After getting the three global spatial features from trajectories, we first combine the intra-trajectory mobility with virtual start/end mobility, and utilize random walk to generate authentic trajectories from them. Here are the main steps of our synthesis algorithm:</p>
 
@@ -165,9 +240,9 @@ Unlike images or text, where joint distributions are natural to evaluate, tabula
 
 <p>It is worth mentioning that we found the adaptive terminated condition (line 5) is very helpful to generate faithful trajectories (otherwise it would be too short to show the spatial characters), but it is still an open question that how to integrate the handcraft adaptive mechanism into the feature selection process.</p>
 
-<h1 id="experiments">Experiments</h1>
+<h2 id="experiments">Experiments</h2>
 
-<h2 id="effectiveness">Effectiveness</h2>
+<h3 id="effectiveness">Effectiveness</h3>
 
 <p>We conduct extensive experiments on four benchmark trajectory datasets (three of them are released in our <a href="https://github.com/zealscott/LDPTrace">repository</a>). For utility metrics, we follow AdaTrace<d-cite key="adatrace"></d-cite> and comprehensively evaluate our method with various metrics from global level, trajectory level to semantic level. From fair comparison, we discard the auxiliary temporal and POI information in NGRAM, and only leverage physical distance to ensure the closeness between original and sampled n-grams in geospatial space. The results show that LDPTrace outperform the baseline by a large margin.</p>
 
@@ -195,7 +270,7 @@ Unlike images or text, where joint distributions are natural to evaluate, tabula
     Utility performance comparison. The best result in each category is shown in bold. For Kendall-tau and FP F1 Similarity, higher values are better. For remaining metrics, lower values are better.
 </div>
 
-<h2 id="efficiency">Efficiency</h2>
+<h3 id="efficiency">Efficiency</h3>
 
 <p>Efficiency is equally important as utility for real-world deployments, we conduct comprehensive experiments to evaluate
 the average running time of each component, as show in the following figure. We find that LDPTrace is a very efficient privacy-preserving trajectory publication framework, which is more than 300 times faster than NGRAM.</p>
@@ -224,7 +299,7 @@ the average running time of each component, as show in the following figure. We 
     Average runtime in seconds.
 </div>
 
-<h2 id="attack-resilience">Attack resilience</h2>
+<h3 id="attack-resilience">Attack resilience</h3>
 
 <p>We also investigate LDPTrace’s resistance to two common attacks, namely re-identification attack and outlier attack, which are defined in this paper<d-cite key="adatrace"></d-cite>. The results indicate that LDPTrace has impressive ability to resist these two attacks: more than 88% trajectories can be successfully protected in re-identification attack, and all trajectories are hidden from outliers when the privacy parameter changes its value from 2 to 10. On the contrary, NGRAM cannot provide provable protections to these attacks, especially when the demand of protection is more strict. We contribute the superiority of LDPTrace to the synthesis design: since the published trajectories do not resemble any real trajectory, it is much more difficult for attackers to identify traces that they are interested in.</p>
 
@@ -252,11 +327,11 @@ the average running time of each component, as show in the following figure. We 
     Attack resilience analysis on Oldenburg dataset.
 </div>
 
-<h2 id="ablation-study">Ablation study</h2>
+<h3 id="ablation-study">Ablation study</h3>
 
 <p>Finally, we conduct in-depth analysis with LDPTrace, like impact of beginning/terminated transitions, impact of grid granularity, impact of different query size. Please refer to our paper for details if interested.</p>
 
-<h1 id="conclusion">Conclusion</h1>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>In this paper, we present a neat yet effective trajectory synthesis
 framework under the rigorous privacy of LDP, called LDPTrace,

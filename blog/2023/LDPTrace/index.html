@@ -40,7 +40,7 @@
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
     
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="https://zealscott.com/blog/2023/04/22/LDPTrace/">
+    <link rel="canonical" href="https://zealscott.com/blog/2023/LDPTrace/">
 
     <!-- Dark Mode -->
     
@@ -175,7 +175,7 @@
 
         <p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2302.06180" rel="external nofollow noopener" target="_blank">work</a> which will be represented at <a href="https://vldb.org/2023/" rel="external nofollow noopener" target="_blank">VLDB 2023</a>. Code and datasets are available at <a href="https://github.com/zealscott/LDPTrace" rel="external nofollow noopener" target="_blank">Github</a>.</p>
 
-<h1 id="introduction">Introduction</h1>
+<h2 id="introduction">Introduction</h2>
 
 <p>Trajectory data is widely used for many real-world applications, such as tracking the spread of the disease through people’s movement patterns and providing personalized location-based services based on travel preference. However, privacy concerns and data protection regulations have limited the extent to which this data is shared and utilized. Current <a href="https://en.wikipedia.org/wiki/Differential_privacy" rel="external nofollow noopener" target="_blank">differential privacy (DP)</a> techniques rely on a <em>trustworthy aggregator</em> to collect users’ raw trajectories, which still suffer from the risk of data breaches from untrustworthy data curators.</p>
 
@@ -205,9 +205,9 @@
 
 <p>In contrast, <a href="https://en.wikipedia.org/wiki/Local_differential_privacy" rel="external nofollow noopener" target="_blank">local differential privacy (LDP)</a> allows users to directly share a noisy version of their data, provides a more practical setting and improved privacy properties. The only solution that meets the rigorous privacy requirements is NGRAM<d-cite key="ngram"></d-cite>. However, this approach suffers from poor global utility, auxiliary knowledge dependence, high computational overhead, and vulnerability to attacks. Therefore, we offer a new privacy-preserving paradigm to protect users’ trajectory data, named LDPTrace, to solve these issues while provides the provable guarantee of LDP.</p>
 
-<h1 id="our-approach">Our approach</h1>
+<h2 id="our-approach">Our approach</h2>
 
-<h2 id="overview">Overview</h2>
+<h3 id="overview">Overview</h3>
 
 <p>Instead of perturbing each trajectory individually, we aim to extract the <strong>key movement patterns</strong> of each user and use them to synthesize privacy-preserving and realistic trajectories. Specifically, LDPTrace approaches trajectory synthesis as a generative process, constructing a probabilistic model based on users’ transition records to estimate the global moving patterns. The key movement patterns are locally extracted from raw trajectory and perturbed/uploaded with OUE<d-cite key="oue"></d-cite> protocol. The overall framework is illustrated as below:</p>
 
@@ -235,7 +235,7 @@
     The framework of LDPTrace.
 </div>
 
-<h2 id="key-movement-patterns">Key movement patterns</h2>
+<h3 id="key-movement-patterns">Key movement patterns</h3>
 
 <p>The probabilistic model consists of three key features:</p>
 
@@ -257,7 +257,7 @@
   </li>
 </ol>
 
-<h2 id="trajectory-synthesis">Trajectory synthesis</h2>
+<h3 id="trajectory-synthesis">Trajectory synthesis</h3>
 
 <p>After getting the three global spatial features from trajectories, we first combine the intra-trajectory mobility with virtual start/end mobility, and utilize random walk to generate authentic trajectories from them. Here are the main steps of our synthesis algorithm:</p>
 
@@ -287,9 +287,9 @@
 
 <p>It is worth mentioning that we found the adaptive terminated condition (line 5) is very helpful to generate faithful trajectories (otherwise it would be too short to show the spatial characters), but it is still an open question that how to integrate the handcraft adaptive mechanism into the feature selection process.</p>
 
-<h1 id="experiments">Experiments</h1>
+<h2 id="experiments">Experiments</h2>
 
-<h2 id="effectiveness">Effectiveness</h2>
+<h3 id="effectiveness">Effectiveness</h3>
 
 <p>We conduct extensive experiments on four benchmark trajectory datasets (three of them are released in our <a href="https://github.com/zealscott/LDPTrace" rel="external nofollow noopener" target="_blank">repository</a>). For utility metrics, we follow AdaTrace<d-cite key="adatrace"></d-cite> and comprehensively evaluate our method with various metrics from global level, trajectory level to semantic level. From fair comparison, we discard the auxiliary temporal and POI information in NGRAM, and only leverage physical distance to ensure the closeness between original and sampled n-grams in geospatial space. The results show that LDPTrace outperform the baseline by a large margin.</p>
 
@@ -317,7 +317,7 @@
     Utility performance comparison. The best result in each category is shown in bold. For Kendall-tau and FP F1 Similarity, higher values are better. For remaining metrics, lower values are better.
 </div>
 
-<h2 id="efficiency">Efficiency</h2>
+<h3 id="efficiency">Efficiency</h3>
 
 <p>Efficiency is equally important as utility for real-world deployments, we conduct comprehensive experiments to evaluate
 the average running time of each component, as show in the following figure. We find that LDPTrace is a very efficient privacy-preserving trajectory publication framework, which is more than 300 times faster than NGRAM.</p>
@@ -346,7 +346,7 @@ the average running time of each component, as show in the following figure. We 
     Average runtime in seconds.
 </div>
 
-<h2 id="attack-resilience">Attack resilience</h2>
+<h3 id="attack-resilience">Attack resilience</h3>
 
 <p>We also investigate LDPTrace’s resistance to two common attacks, namely re-identification attack and outlier attack, which are defined in this paper<d-cite key="adatrace"></d-cite>. The results indicate that LDPTrace has impressive ability to resist these two attacks: more than 88% trajectories can be successfully protected in re-identification attack, and all trajectories are hidden from outliers when the privacy parameter changes its value from 2 to 10. On the contrary, NGRAM cannot provide provable protections to these attacks, especially when the demand of protection is more strict. We contribute the superiority of LDPTrace to the synthesis design: since the published trajectories do not resemble any real trajectory, it is much more difficult for attackers to identify traces that they are interested in.</p>
 
@@ -374,11 +374,11 @@ the average running time of each component, as show in the following figure. We 
     Attack resilience analysis on Oldenburg dataset.
 </div>
 
-<h2 id="ablation-study">Ablation study</h2>
+<h3 id="ablation-study">Ablation study</h3>
 
 <p>Finally, we conduct in-depth analysis with LDPTrace, like impact of beginning/terminated transitions, impact of grid granularity, impact of different query size. Please refer to our paper for details if interested.</p>
 
-<h1 id="conclusion">Conclusion</h1>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>In this paper, we present a neat yet effective trajectory synthesis
 framework under the rigorous privacy of LDP, called LDPTrace,
