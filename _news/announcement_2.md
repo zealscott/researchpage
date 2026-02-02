@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We introduce a highly efficient yet powerful membership inference attack called [Imitative MIA](https://arxiv.org/abs/2509.06796).
+We present a [comprehensive study](https://arxiv.org/abs/2509.14278) on the emerging privacy risks of LLMs **beyond** data privacy, which has been published at [Bulletin of the Technical Committee on Data Engineering](http://sites.computer.org/debull/A25dec/issue1.htm).

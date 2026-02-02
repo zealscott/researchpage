@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-We present [a new class of MIA](https://arxiv.org/abs/2507.21412) for **jointly** membership inference, which will be presented at NDSS 2026.
+We present [a new class of MIA](https://arxiv.org/abs/2507.21412) for **jointly** membership inference, which will be presented at [NDSS 2026](https://www.ndss-symposium.org/).
