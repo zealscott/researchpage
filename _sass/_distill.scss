@@ -132,6 +132,30 @@ d-appendix {
   }
 }
 
+/* Sidebar TOC title */
+#toc-sidebar .toc-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+/* Distill layout adjustments when used with sidebar TOC */
+.container .post.distill {
+  d-article,
+  d-title,
+  d-byline,
+  d-appendix,
+  d-bibliography {
+    grid-template-columns: [screen-start page-start kicker-start text-start gutter-start middle-start] 1fr [text-end page-end gutter-end kicker-end middle-end screen-end] !important;
+    grid-column-gap: 0 !important;
+  }
+
+  d-article > * {
+    grid-column: text;
+  }
+}
+
 @media (max-width: 1024px) {
   d-article {
     d-contents {

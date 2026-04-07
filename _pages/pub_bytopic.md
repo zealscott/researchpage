@@ -2,7 +2,7 @@
 layout: page
 permalink: /publicationsbytopic/
 title: Publications
-topics: [Data Privacy, Recommender Systems, Spatio-temporal Data Mining, Misc]
+topics: [Data Privacy, AI Security & Privacy, Recommender Systems, Spatio-temporal Data Mining, Misc]
 nav: false
 ---
 <!-- _pages/publications.md -->
