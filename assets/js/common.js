@@ -16,7 +16,12 @@ $(document).ready(function () {
     if($('#toc-sidebar').length){
         var navSelector = "#toc-sidebar";
         var $myNav = $(navSelector);
-        Toc.init($myNav);
+        var $scope = $('d-article');
+        if ($scope.length) {
+            Toc.init({ $nav: $myNav, $scope: $scope });
+        } else {
+            Toc.init($myNav);
+        }
         $("body").scrollspy({
             target: navSelector,
         });

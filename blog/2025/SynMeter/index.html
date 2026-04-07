@@ -32,7 +32,7 @@
 
     
     <!-- Sidebar Table of Contents -->
-    <link href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
     
 
     <!-- Styles -->
@@ -155,25 +155,22 @@
 
 
     <!-- Content -->
-    <div class="post distill">
-
-      <d-title>
-        <h1>How to (principally) assess tabular data synthesis algorithms?</h1>
-        <p></p>
-      </d-title>
-
-      <d-byline></d-byline>
-
-      <d-article>
-        <d-contents>
-          <nav class="l-text figcaption">
-          <h3>Contents</h3>
-            <div><a href="#"></a></div>
-            
-          </nav>
-        </d-contents>
-
-        <p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2402.06806" rel="external nofollow noopener" target="_blank">work</a>, which will be presented at <a href="https://www.sigsac.org/ccs/CCS2025/" rel="external nofollow noopener" target="_blank">CCS 2025</a>. Code and datasets are available on <a href="https://github.com/zealscott/SynMeter" rel="external nofollow noopener" target="_blank">Github</a>.</p>
+    
+    <div class="container mt-5">
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <nav id="toc-sidebar" class="sticky-top"><h3 class="toc-title">Contents</h3></nav>
+        </div>
+        <div class="col-sm-9">
+          <div class="post distill">
+            <d-title>
+              <h1>How to (principally) assess tabular data synthesis algorithms?</h1>
+              <p></p>
+            </d-title>
+            <d-byline></d-byline>
+            <d-article>
+              <p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2402.06806" rel="external nofollow noopener" target="_blank">work</a>, which will be presented at <a href="https://www.sigsac.org/ccs/CCS2025/" rel="external nofollow noopener" target="_blank">CCS 2025</a>. Code and datasets are available on <a href="https://github.com/zealscott/SynMeter" rel="external nofollow noopener" target="_blank">Github</a>.</p>
 
 <h2 id="introduction">Introduction</h2>
 
@@ -234,25 +231,44 @@ Unlike images or text, where joint distributions are natural to evaluate, tabula
 
 <p>However, while our paper makes a significant step toward a standardized evaluation and serves as a bridge to connect and compare DP and HP synthesis algorithms, it has its own limitations. For example, the computation of our privacy metric (MDS) is quite expensive, as it requires training many shadow models for an accurate privacy estimation. Nevertheless, we hope our work will inspire future research to design tabular data synthesis algorithms that achieve both high fidelity and strong privacy.</p>
 
-      </d-article>
-
-      <d-appendix>
-        <d-footnote-list></d-footnote-list>
-        <d-citation-list></d-citation-list>
-      </d-appendix>
-
-      <d-bibliography src="/assets/bibliography/2025-08-25-SynMeter.bib"></d-bibliography>
+            </d-article>
+            <d-appendix>
+              <d-footnote-list></d-footnote-list>
+              <d-citation-list></d-citation-list>
+            </d-appendix>
+            <d-bibliography src="/assets/bibliography/2025-08-25-SynMeter.bib"></d-bibliography>
 </div>
+        </div>
+      </div>
+      
+    </div>
+    
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
-        © Copyright 2026 Yuntao  Du (杜云滔). Last updated: February 10, 2026.
+        © Copyright 2026 Yuntao  Du (杜云滔). Last updated: April 07, 2026.
       </div>
     </footer>
 
     <!-- Bootsrap & MDB scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+  <!-- Bootstrap Table -->
+  <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
+
+  <!-- Load Common JS -->
+  <script src="/assets/js/no_defer.js"></script>
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y8G146HP6"></script>

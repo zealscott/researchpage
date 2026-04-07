@@ -987,6 +987,27 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   color: var(--global-hover-color) !important;
 }
 
+/* Sidebar TOC title */
+#toc-sidebar .toc-title {
+  margin-top: 0;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  color: var(--global-text-color);
+}
+
+/* Distill layout adjustments when used with sidebar TOC */
+.container .post.distill d-article,
+.container .post.distill d-title,
+.container .post.distill d-byline,
+.container .post.distill d-appendix,
+.container .post.distill d-bibliography {
+  grid-template-columns: [screen-start page-start kicker-start text-start gutter-start middle-start] 1fr [text-end page-end gutter-end kicker-end middle-end screen-end] !important;
+  grid-column-gap: 0 !important;
+}
+.container .post.distill d-article > * {
+  grid-column: text;
+}
+
 @media (max-width: 1024px) {
   d-article d-contents {
     display: block;
