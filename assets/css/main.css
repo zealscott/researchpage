@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*******************************************************************************
  * Variables used throughout the theme.
  * To adjust anything, simply edit the variables below and rebuild the theme.
@@ -987,27 +988,21 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   color: var(--global-hover-color) !important;
 }
 
-/* Sidebar TOC title */
-#toc-sidebar .toc-title {
-  margin-top: 0;
-  margin-bottom: 1em;
-  font-size: 1rem;
-  color: var(--global-text-color);
+/* TOC sidebar for distill layout — fixed position in left margin */
+nav.distill-toc {
+  position: fixed !important;
+  top: 5rem;
+  left: max(1rem, (100vw - 780px) / 2 - 240px);
+  width: 220px;
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
 }
 
-/* Distill layout adjustments when used with sidebar TOC */
-.container .post.distill d-article,
-.container .post.distill d-title,
-.container .post.distill d-byline,
-.container .post.distill d-appendix,
-.container .post.distill d-bibliography {
-  grid-template-columns: [screen-start page-start kicker-start text-start gutter-start middle-start] 1fr [text-end page-end gutter-end kicker-end middle-end screen-end] !important;
-  grid-column-gap: 0 !important;
+@media (max-width: 1200px) {
+  nav.distill-toc {
+    display: none;
+  }
 }
-.container .post.distill d-article > * {
-  grid-column: text;
-}
-
 @media (max-width: 1024px) {
   d-article d-contents {
     display: block;
