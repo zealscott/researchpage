@@ -2,7 +2,7 @@
 
 ## Hadoop配置
 
-这里使用Hadoop2.5.1进行配置，可以[参考这里](http://zealscott.com/posts/21264/)。
+这里使用Hadoop2.5.1进行配置，可以[参考这里](http://yuntaodu.me/posts/21264/)。
 
 查看版本号
 

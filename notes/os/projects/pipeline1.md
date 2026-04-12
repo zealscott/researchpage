@@ -240,6 +240,6 @@ void PrintCommand(int n)
 2. Operating System:Design and Implementation,Third Edition 
 3. Computer Systems: A Programmer's Perspective, 3/E
 
-[1]: http://zealscott.com/2018/03/06/%E7%AE%A1%E9%81%93%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/
+[1]: http://yuntaodu.me/2018/03/06/%E7%AE%A1%E9%81%93%E7%9A%84%E7%90%86%E8%A7%A3%E4%B8%8E%E5%AE%9E%E7%8E%B0/
 [2]: http://www.cplusplus.com/reference/cstring/strtok/
 [3]: http://blog.csdn.net/u013246898/article/details/52985739
