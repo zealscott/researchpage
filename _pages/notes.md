@@ -54,8 +54,8 @@ nav_order: 3
 
 - [Notes](./stat)
 - Auxiliary materials
-  - [Gamma function](https://zealscott.com/files/misc/Gamma.pdf)
-  - [Gibbs Sampling](https://zealscott.com/files/misc/GibbsSampling.pdf)
+  - [Gamma function](https://yuntaodu.me/files/misc/Gamma.pdf)
+  - [Gibbs Sampling](https://yuntaodu.me/files/misc/GibbsSampling.pdf)
 
 **Operating System** *(Spring 2018)*
 

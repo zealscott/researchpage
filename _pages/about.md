@@ -16,7 +16,7 @@ profile:
     # <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a>  
     # <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
     # <a href="https://twitter.com/scott_ytdu" title="Twitter><i class="fa-brands fa-x-twitter fa-2xl"></i></a>  
-    # <a href="https://research.zealscott.com/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
+    # <a href="https://research.yuntaodu.me/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
     # </p>
     # </div>
 
@@ -28,7 +28,7 @@ honors: true
 services: true
 ---
 
-I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). My research interests lie in **Data Privacy** and **Privacy in Machine Learning**. I am also broadly interested in analyzing emerging privacy and security risks arising from recent advances in AI. Here is my [CV](https://zealscott.com/files/Yuntao_Du_Resume.pdf).
+I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). My research interests lie in **Data Privacy** and **Privacy in Machine Learning**. I am also broadly interested in analyzing emerging privacy and security risks arising from recent advances in AI. Here is my [CV](https://yuntaodu.me/files/Yuntao_Du_Resume.pdf).
 
 
 My research has been recognized and supported by the [Ross Fellowship](https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html) (2023-2027), [Presidential Doctoral Excellence Awards](https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html) (2023-2027), and [Herbold Scholarship](https://www.bobherbold.com/) (2023-2024).
