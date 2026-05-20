@@ -2,8 +2,10 @@
 layout: page
 permalink: /publicationsbytopic/
 title: Publications
-topics: [Data Privacy, AI Security & Privacy, Recommender Systems, Spatio-temporal Data Mining, Misc]
+topics: [AI Security & Privacy, Data Privacy, Recommender Systems, Spatio-temporal Data Mining]
 nav: false
+toc:
+  sidebar: left
 ---
 <!-- _pages/publications.md -->
 
@@ -15,6 +17,8 @@ nav: false
 <button type="button" class="btn waves-effect waves-light" style="outline:none">By Year</button>
 </a>
 </p>
+
+<p><sup>*</sup> equal contribution, <sup>†</sup> mentored student</p>
 
 <div class="publications">
 {%- for y in page.topics %}

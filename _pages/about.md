@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Data Privacy & Trustworthy Machine Learning
+subtitle: AI Security & Data Privacy
 profile:
   align: right
   image: yuntao.png
@@ -28,10 +28,16 @@ honors: true
 services: true
 ---
 
-I am a PhD student in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). My research interests lie in **Data Privacy** and **Privacy in Machine Learning**. I am also broadly interested in analyzing emerging privacy and security risks arising from recent advances in AI. Here is my [CV](https://yuntaodu.me/files/Yuntao_Du_Resume.pdf).
+I am a PhD candidate in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). Here is my [CV](https://yuntaodu.me/files/Yuntao_Du_Resume.pdf) (updated May 20, 2026).
+
+I study **security and privacy risks** in machine learning and LLM agents, from both adversarial and defensive perspectives. My current research focuses on:
+
+- **AI Security and Privacy.** (1) Uncovering emerging privacy threats posed by LLM misuse ([ACL'26](https://arxiv.org/abs/2505.12402), [Data Eng. Bulletin'25](https://arxiv.org/abs/2509.14278)); (2) Building practical data-use detection methods to support the responsible use of training data in LLMs.
+- **Data Privacy in Machine Learning.** (1) Designing principled membership inference attacks to assess information leakage in ML models ([NDSS'26](https://arxiv.org/abs/2507.21412), [USENIX Security'26](https://arxiv.org/abs/2509.06796)); (2) Auditing privacy risks of LLMs (USENIX Security'26 [\[1\]](https://arxiv.org/abs/2510.05699), [\[2\]](https://arxiv.org/abs/2601.02751); [ICLR'26](https://arxiv.org/abs/2601.20125));
+- **Differentially Private Data Synthesis.** Developing practical data synthesis algorithms with provable privacy guarantees for various types of sensitive data ([CCS'25](https://arxiv.org/abs/2402.06806), [VLDB'23](https://arxiv.org/abs/2302.06180)).
 
 
-My research has been recognized and supported by the [Ross Fellowship](https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html) (2023-2027), [Presidential Doctoral Excellence Awards](https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html) (2023-2027), and [Herbold Scholarship](https://www.bobherbold.com/) (2023-2024).
+My research has been recognized and supported by the [Ross Fellowship](https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html) (2023-2027), [Presidential Doctoral Excellence Award](https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html) (2023-2027), and [Herbold Scholarship](https://www.bobherbold.com/) (2023-2024).
 
 
 

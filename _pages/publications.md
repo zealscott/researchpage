@@ -6,6 +6,8 @@ title: Publications
 years: [2026, 2025, 2024, 2023, 2022, 2021]
 nav: true
 nav_order: 1
+toc:
+  sidebar: left
 ---
 <!-- _pages/publications.md -->
 
@@ -19,8 +21,12 @@ nav_order: 1
 </a>
 </p>
 
+<p><sup>*</sup> equal contribution, <sup>†</sup> mentored student</p>
+
 
 <div class="publications">
+  <h2 class="year">Manuscript</h2>
+  {% bibliography -f {{ site.scholar.bibliography }} -q @*[manuscript=true]* %}
 {%- for y in page.years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f {{ site.scholar.bibliography }} -q @*[year={{y}}]* %}

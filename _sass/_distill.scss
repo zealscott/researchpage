@@ -132,17 +132,20 @@ d-appendix {
   }
 }
 
-/* TOC sidebar for distill layout — fixed position in left margin */
+/* TOC sidebar for distill layout — positioned identically to
+   `nav.default-toc` on the publications page so the two pages share
+   the same horizontal x-position and vertical y-position. */
 nav.distill-toc {
   position: fixed !important;
-  top: 5rem;
-  left: max(1rem, calc((100vw - 780px) / 2 - 240px));
-  width: 220px;
-  max-height: calc(100vh - 6rem);
+  top: 22rem;
+  margin-top: 0;
+  left: max(1rem, calc((100vw - 1140px) / 2 - 200px));
+  width: 180px;
+  max-height: calc(100vh - 24rem);
   overflow-y: auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
   nav.distill-toc {
     display: none;
   }
