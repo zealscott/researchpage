@@ -979,7 +979,7 @@ h3.pubyear {
 nav.default-toc {
   position: fixed !important;
   top: 22rem;
-  left: max(1rem, calc((100vw - 1140px) / 2 - 200px));
+  left: #{"max(1rem, calc((100vw - 1140px) / 2 - 200px))"};
   width: 180px;
   max-height: calc(100vh - 24rem);
   overflow-y: auto;
@@ -987,7 +987,7 @@ nav.default-toc {
 
 nav.default-toc-right {
   left: auto;
-  right: max(1rem, calc((100vw - 1140px) / 2 - 200px));
+  right: #{"max(1rem, calc((100vw - 1140px) / 2 - 200px))"};
 }
 
 @media (max-width: 767px) {

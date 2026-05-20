@@ -139,7 +139,7 @@ nav.distill-toc {
   position: fixed !important;
   top: 22rem;
   margin-top: 0;
-  left: max(1rem, calc((100vw - 1140px) / 2 - 200px));
+  left: #{"max(1rem, calc((100vw - 1140px) / 2 - 200px))"};
   width: 180px;
   max-height: calc(100vh - 24rem);
   overflow-y: auto;
