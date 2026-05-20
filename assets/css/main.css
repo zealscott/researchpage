@@ -91,7 +91,7 @@ body.sticky-bottom-footer {
 }
 
 .profile img {
-  width: 75%;
+  width: 100%;
 }
 
 /******************************************************************************
@@ -222,7 +222,7 @@ blockquote {
 
 @media (min-width: 576px) {
   .profile {
-    width: 30%;
+    width: 20%;
   }
   .profile .address p {
     display: block;
@@ -829,11 +829,11 @@ nav[data-toggle=toc] {
   top: 5rem;
 }
 nav[data-toggle=toc] .nav .nav > li > a {
-  font-size: 0.75rem;
+  font-size: 0.95rem;
 }
 nav[data-toggle=toc] .nav > li > a {
   color: var(--global-text-color);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
 }
 nav[data-toggle=toc] .nav > li > a:hover {
   color: var(--global-hover-color);
@@ -842,7 +842,7 @@ nav[data-toggle=toc] .nav > li > a:hover {
 nav[data-toggle=toc] .nav-link.active {
   color: var(--global-theme-color);
   border-left-color: var(--global-theme-color);
-  font-size: 0.75rem;
+  font-size: 0.95rem;
 }
 nav[data-toggle=toc] .nav-link.active:hover {
   color: var(--global-hover-color);
@@ -863,6 +863,33 @@ h3.pubyear {
   margin-bottom: 30px; /* Adjust this value as needed */
 }
 
+/* TOC sidebar for default layout — fixed position adjacent to the
+   container's left edge (just outside the page body), so the content
+   stays at its default container width. At wide viewports the TOC
+   sits next to the container; at narrower desktop viewports it
+   clamps to the left edge of the viewport so it stays visible. Hidden
+   only on mobile. `top` is set so the TOC initially aligns with the
+   first horizontal line of the publications section (the border-top
+   above "Manuscript") and the body text on blog pages. */
+nav.default-toc {
+  position: fixed !important;
+  top: 22rem;
+  left: max(1rem, (100vw - 1140px) / 2 - 200px);
+  width: 180px;
+  max-height: calc(100vh - 24rem);
+  overflow-y: auto;
+}
+
+nav.default-toc-right {
+  left: auto;
+  right: max(1rem, (100vw - 1140px) / 2 - 200px);
+}
+
+@media (max-width: 767px) {
+  nav.default-toc {
+    display: none;
+  }
+}
 /*******************************************************************************
  * Style overrides for distill blog posts.
  ******************************************************************************/
@@ -988,17 +1015,20 @@ d-appendix a:hover, d-appendix a.footnote-backlink:hover {
   color: var(--global-hover-color) !important;
 }
 
-/* TOC sidebar for distill layout — fixed position in left margin */
+/* TOC sidebar for distill layout — positioned identically to
+   `nav.default-toc` on the publications page so the two pages share
+   the same horizontal x-position and vertical y-position. */
 nav.distill-toc {
   position: fixed !important;
-  top: 5rem;
-  left: max(1rem, (100vw - 780px) / 2 - 240px);
-  width: 220px;
-  max-height: calc(100vh - 6rem);
+  top: 22rem;
+  margin-top: 0;
+  left: max(1rem, (100vw - 1140px) / 2 - 200px);
+  width: 180px;
+  max-height: calc(100vh - 24rem);
   overflow-y: auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 767px) {
   nav.distill-toc {
     display: none;
   }

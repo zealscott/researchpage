@@ -33,6 +33,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
 
     
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
 
     <!-- Styles -->
     
@@ -99,9 +102,11 @@
 
 
     <!-- Content -->
+    
+      <nav id="toc-sidebar" class="default-toc"></nav>
+    
     <div class="container mt-5">
-      
-        <!-- page.html -->
+      <!-- page.html -->
         <div class="post">
 
           <header class="post-header">
@@ -121,7 +126,88 @@
 </a>
 </p>
 
+<p><sup>*</sup> equal contribution, <sup>†</sup> mentored student</p>
+
 <div class="publications">
+  <h2 class="year">Manuscript</h2>
+  <ol class="bibliography">
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2"><div class="abbr"><abbr class="badge">Manuscript</abbr></div></div>
+
+        <!-- Entry bib key -->
+        <div id="manuscript_dotmap" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">Privacy Leakage from a Thousand Words: Sub-Pixel Location Recovery from Dot Maps</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        <strong style="text-decoration: underline;">Yuntao Du*</strong>, Tanishq Praveen Pauskar*†, Hao Wang, Jing Su, and Ninghui Li</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          
+        </div>
+        <div class="periodical">
+          Manuscript
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+<li>
+<!-- _layouts/bib.html -->
+      <div class="row">
+        <div class="col-sm-2"><div class="abbr"><abbr class="badge">Manuscript</abbr></div></div>
+
+        <!-- Entry bib key -->
+        <div id="manuscript_dataset_mip" class="col-sm-8">
+        <!-- Title -->
+        <div class="title">On the Security of Dataset Membership Inference Protocols against Malicious Data Owners</div>
+        <!-- Author -->
+        <div class="author">
+        
+
+        Patrick Li†, <strong style="text-decoration: underline;">Yuntao Du</strong>, and Neil Gong</div>
+
+        <!-- Journal/Book title and date -->
+        
+        
+        <div class="periodical">
+          
+        </div>
+        <div class="periodical">
+          Manuscript
+        </div>
+
+          <!-- Links/Buttons -->
+          <div class="links">
+          </div>
+          
+          <div class="badges">
+            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
+              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
+          </div>
+
+          
+        </div>
+      </div>
+</li>
+</ol>
   <h2 class="year">2026</h2>
   <ol class="bibliography">
 <li>
@@ -210,6 +296,7 @@
 
           <!-- Links/Buttons -->
           <div class="links">
+            <a href="http://arxiv.org/abs/2601.20125" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
           </div>
           
           <div class="badges">
@@ -334,7 +421,7 @@
         <div class="author">
         
 
-        Meng Tong, <strong style="text-decoration: underline;">Yuntao Du</strong>, Kejiang Chen, Weiming Zhang, and Ninghui Li</div>
+        Meng Tong*†, <strong style="text-decoration: underline;">Yuntao Du*</strong>, Kejiang Chen, Weiming Zhang, and Ninghui Li</div>
 
         <!-- Journal/Book title and date -->
         
@@ -597,7 +684,7 @@
         <div class="author">
         
 
-        Yujia Hu, <strong style="text-decoration: underline;">Yuntao Du</strong>, Zhikun Zhang, Ziquan Fang, Lu Chen, Kai Zheng, and Yunjun Gao</div>
+        Yujia Hu†, <strong style="text-decoration: underline;">Yuntao Du</strong>, Zhikun Zhang, Ziquan Fang, Lu Chen, Kai Zheng, and Yunjun Gao</div>
 
         <!-- Journal/Book title and date -->
         
@@ -640,7 +727,7 @@
         <div class="author">
         
 
-        Xinjun Zhu, <strong style="text-decoration: underline;">Yuntao Du</strong>, Lu Chen, Baihua Zheng, and Yunjun Gao</div>
+        Xinjun Zhu†, <strong style="text-decoration: underline;">Yuntao Du</strong>, Lu Chen, Baihua Zheng, and Yunjun Gao</div>
 
         <!-- Journal/Book title and date -->
         
@@ -657,45 +744,6 @@
           <div class="links">
             <a href="http://arxiv.org/abs/2304.14987" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
             <a href="https://github.com/xj-zhu98/KRDN" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Code</a>
-          </div>
-          
-          <div class="badges">
-            <span class="altmetric-embed" data-hide-no-mentions="true" data-hide-less-than="15" data-badge-type="2" data-badge-popover="right"></span>
-              <span class="__dimensions_badge_embed__" data-pmid="" data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 3px;"></span>
-          </div>
-
-          
-        </div>
-      </div>
-</li>
-<li>
-<!-- _layouts/bib.html -->
-      <div class="row">
-        <div class="col-sm-2"><div class="abbr"><abbr class="badge">TKDE</abbr></div></div>
-
-        <!-- Entry bib key -->
-        <div id="TKDE23_Model" class="col-sm-8">
-        <!-- Title -->
-        <div class="title">Finding Materialized Models for Model Reuse</div>
-        <!-- Author -->
-        <div class="author">
-        
-
-        Minjun Zhao, Lu Chen, Keyu Yang, <strong style="text-decoration: underline;">Yuntao Du</strong>, and Yunjun Gao</div>
-
-        <!-- Journal/Book title and date -->
-        
-        
-        <div class="periodical">
-          <em>IEEE Transactions on Knowledge and Data Engineering</em>, 2023
-        </div>
-        <div class="periodical">
-          
-        </div>
-
-          <!-- Links/Buttons -->
-          <div class="links">
-            <a href="http://arxiv.org/abs/2110.06532" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">arXiv</a>
           </div>
           
           <div class="badges">
@@ -739,7 +787,7 @@
         <div class="author">
         
 
-        <strong style="text-decoration: underline;">Yuntao Du</strong>, Yujia Hu, Zhikun Zhang, Ziquan Fang, Lu Chen, Baihua Zheng, and Yunjun Gao</div>
+        <strong style="text-decoration: underline;">Yuntao Du</strong>, Yujia Hu†, Zhikun Zhang, Ziquan Fang, Lu Chen, Baihua Zheng, and Yunjun Gao</div>
 
         <!-- Journal/Book title and date -->
         
@@ -839,7 +887,7 @@
         <div class="author">
         
 
-        Zhihao Zeng, <strong style="text-decoration: underline;">Yuntao Du</strong>, Ziquan Fang, Lu Chen, Shiliang Pu, Guodong Chen, Hui Wang, and Yunjun Gao</div>
+        Zhihao Zeng†, <strong style="text-decoration: underline;">Yuntao Du</strong>, Ziquan Fang, Lu Chen, Shiliang Pu, Guodong Chen, Hui Wang, and Yunjun Gao</div>
 
         <!-- Journal/Book title and date -->
         
@@ -878,7 +926,7 @@
         <div class="author">
         
 
-        <strong style="text-decoration: underline;">Yuntao Du</strong>, Xinjun Zhu, Lu Chen, Ziquan Fang, and Yunjun Gao</div>
+        <strong style="text-decoration: underline;">Yuntao Du</strong>, Xinjun Zhu†, Lu Chen, Ziquan Fang, and Yunjun Gao</div>
 
         <!-- Journal/Book title and date -->
         
@@ -982,7 +1030,7 @@
         <div class="author">
         
 
-        <strong style="text-decoration: underline;">Yuntao Du</strong>, Xinjun Zhu, Lu Chen, Baihua Zheng, and Yunjun Gao</div>
+        <strong style="text-decoration: underline;">Yuntao Du</strong>, Xinjun Zhu†, Lu Chen, Baihua Zheng, and Yunjun Gao</div>
 
         <!-- Journal/Book title and date -->
         
@@ -1164,12 +1212,11 @@
 
         </div>
 
-      
     </div>
 
     <!-- Footer -->    <footer class="sticky-bottom mt-5">
       <div class="container">
-        © Copyright 2026 Yuntao  Du (杜云滔). Last updated: April 12, 2026.
+        © Copyright 2026 Yuntao  Du (杜云滔). Last updated: May 20, 2026.
       </div>
     </footer>
 
@@ -1189,6 +1236,9 @@
   <!-- Medium Zoom JS -->
   <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
   <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
+
 
   <!-- Bootstrap Table -->
   <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
