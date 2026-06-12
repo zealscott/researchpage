@@ -19,14 +19,18 @@
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
+  {%- assign author_markers = "" -%}
+  {%- if author.last contains "*" -%}{%- assign author_markers = author_markers | append: "*" -%}{%- endif -%}
+  {%- if author.last contains "†" -%}{%- assign author_markers = author_markers | append: "†" -%}{%- endif -%}
   {%- unless forloop.first %}, {% endunless -%}
   {%- if author_is_self -%}
-    <u>{{ author.first }} {{ author.last }}</u>
+    <u>{{ author.first }} {{ author_last_name }}</u>
   {%- elsif coauthor_url -%}
-    <a href="{{ coauthor_url }}">{{ author.first }} {{ author.last }}</a>
+    <a href="{{ coauthor_url }}">{{ author.first }} {{ author_last_name }}</a>
   {%- else -%}
-    {{ author.first }} {{ author.last }}
+    {{ author.first }} {{ author_last_name }}
   {%- endif -%}
+  {%- if author_markers != "" -%}<sup>{{ author_markers }}</sup>{%- endif -%}
 {%- endfor -%}<br>
 {%- if entry.manuscript -%}
 <em>Manuscript</em>

@@ -69,7 +69,7 @@ permalink: /
   <tbody>
     <tr>
       <td class="section-cell">
-        <h2>Selected Honors &amp; Awards</h2>
+        <h2>Selected Awards &amp; Honors</h2>
         <ul class="list-compact">
           {% for honor in site.data.honors %}
           <li>{{ honor.prefix }}<strong>{% if honor.url %}<a href="{{ honor.url }}">{{ honor.name }}</a>{% else %}{{ honor.name }}{% endif %}</strong>{{ honor.suffix }}, {{ honor.year }}{% if honor.extra_links %} &nbsp;{% for link in honor.extra_links %}[<a href="{{ link.url }}">{{ link.label }}</a>]{% unless forloop.last %} {% endunless %}{% endfor %}{% endif %}</li>
@@ -88,13 +88,7 @@ permalink: /
         <h2>Service</h2>
         <ul>
           {% for service in site.data.services %}
-          <li><b>{{ service.title }}</b>
-            <ul class="list-compact">
-              {% for item in service.items %}
-              <li>{{ item }}</li>
-              {% endfor %}
-            </ul>
-          </li>
+          <li><b>{{ service.title }}</b>: {{ service.abbrs }}</li>
           {% endfor %}
         </ul>
       </td>

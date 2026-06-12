@@ -355,6 +355,83 @@ sup {
   font-size: 11px;
 }
 
+/* Blog post pages (Distill content inside the Barron column) */
+.post-title {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+d-article,
+d-appendix {
+  display: block !important;
+  padding: 0 !important;
+  border-top: none !important;
+}
+
+d-article,
+d-article p,
+d-article li,
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article figcaption,
+d-article a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif !important;
+}
+
+d-article {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #222 !important;
+  margin-top: 10px;
+}
+
+d-article h2 {
+  font-size: 21px !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: #1a1a1a !important;
+  margin: 26px 0 10px !important;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #ebebeb !important;
+}
+
+d-article h3 {
+  font-size: 17px !important;
+  font-style: normal !important;
+  color: #1a1a1a !important;
+  margin: 20px 0 8px !important;
+}
+
+d-article a {
+  color: #1772d0 !important;
+  border-bottom: none !important;
+}
+
+d-article a:hover {
+  color: #f09228 !important;
+}
+
+d-article img {
+  max-width: 100%;
+}
+
+d-article figure {
+  margin: 16px 0;
+}
+
+d-appendix {
+  margin-top: 28px !important;
+  border-top: 1px solid #ebebeb !important;
+  padding-top: 14px !important;
+  font-size: 12px !important;
+  color: #555 !important;
+}
+
 /* Footer */
 .footer-note {
   display: block;

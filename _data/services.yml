@@ -1,4 +1,7 @@
+# abbrs: short form shown on the homepage (Barron-style, one line per category)
+# items: full names kept for reference / CV
 - title: Conference Reviewer
+  abbrs: "AsiaCCS, IEEE S&P (Poster), NeurIPS, ICLR, AISTATS, VLDB, WWW, AAAI, SIGIR, CODASPY, WSDM, CIKM"
   items:
     - "ACM ASIA Conference on Computer and Communications Security (AsiaCCS)"
     - "IEEE Symposium on Security and Privacy (S&P), Poster Track"
@@ -12,8 +15,9 @@
     - "ACM Conference on Data and Application Security and Privacy (CODASPY)"
     - "International Conference on Web Search and Data Mining (WSDM)"
     - "ACM Conference on Information and Knowledge Management (CIKM)"
-    
+
 - title: Journal Reviewer
+  abbrs: "CSUR, TDSC, TOPS, VLDBJ, TKDE, TORS, TBD"
   items:
     - "ACM Computing Surveys (CSUR)"
     - "IEEE Transactions on Dependable and Secure Computing (TDSC)"
