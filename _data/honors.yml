@@ -1,7 +1,6 @@
 # Add your honors here
-- prefix: "National Winner (Purdue Team Lead), "
-  name: "Innovation Bowl"
-  suffix: ""
+- name: "National Winner"
+  suffix: ", Innovation Bowl (Purdue team lead)"
   url: "https://www.radiancetech.com/innovationbowl"
   extra_links:
     - label: "Purdue CS"
