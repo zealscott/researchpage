@@ -9,7 +9,7 @@ permalink: /
   <tbody>
     <tr>
       <td class="section-cell">
-        <p>I am a PhD candidate in computer science at <a href="https://www.purdue.edu/">Purdue University</a>, advised by Prof. <a href="https://www.cs.purdue.edu/homes/ninghui">Ninghui Li</a>. Here is my <a href="{{ '/files/Yuntao_Du_Resume.pdf' | relative_url }}">CV</a> (updated May 20, 2026).</p>
+        <p>I am a PhD candidate in computer science at <a href="https://www.purdue.edu/">Purdue University</a>, advised by Prof. <a href="https://www.cs.purdue.edu/homes/ninghui">Ninghui Li</a>.</p>
         <p>I study <b>security and privacy risks</b> in machine learning and LLM agents, from both adversarial and defensive perspectives. My current research focuses on three directions:</p>
 
         <div class="research-pillars">
