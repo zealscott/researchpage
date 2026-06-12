@@ -26,7 +26,7 @@ permalink: /
           <div class="pillar pillar--threat">
             <div class="pillar-title">🛡️ Private Data Synthesis</div>
             <div class="pillar-sub">Synthesis data with provable guarantee</div>
-            <div class="pillar-detail">developing differentially private synthesis algorithms for <a href="https://arxiv.org/abs/2402.06806">various types</a> of <a href="https://arxiv.org/abs/2302.06180">sensitive data</a>.</div>
+            <div class="pillar-detail">developing differentially private synthesis algorithms for sensitive data, such as <a href="https://arxiv.org/abs/2402.06806">tabular data</a> and <a href="https://arxiv.org/abs/2302.06180">trajectory data</a>.</div>
           </div>
         </div>
 
