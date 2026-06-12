@@ -1,22 +1,30 @@
 # abbrs: short form shown on the homepage (Barron-style, one line per category)
 # items: full names kept for reference / CV
-- title: Conference Reviewer
-  abbrs: "AsiaCCS, IEEE S&P (Poster), NeurIPS, ICLR, AISTATS, VLDB, WWW, AAAI, SIGIR, CODASPY, WSDM, CIKM"
+# Source: files/Yuntao_Du_Resume.pdf (Academic Service, May 2026)
+- title: Program Committee
+  abbrs: "VLDB (2027), AsiaCCS (2027), NeurIPS (2026), ICLR (2025, 2026), AISTATS (2025, 2026), WWW (2026), CODASPY (2026), WSDM (2026), CIKM (2024, 2025, 2026), SIGIR (2023, 2024, 2025, 2026), IJCNN (2025), TRL (2024, 2025), AAAI (2023, 2024, 2025, 2026), SIGIR-AP (2023, 2024)"
   items:
-    - "ACM ASIA Conference on Computer and Communications Security (AsiaCCS)"
-    - "IEEE Symposium on Security and Privacy (S&P), Poster Track"
-    - "Neural Information Processing Systems (NeurIPS)"
-    - "International Conference on Learning Representations (ICLR)"
-    - "International Conference on Artificial Intelligence and Statistics (AISTATS)"
-    - "International Conference on Very Large Data Bases (VLDB)"
-    - "ACM Web Conference (WWW)"
-    - "The AAAI Conference on Artificial Intelligence (AAAI)"
-    - "ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR)"
-    - "ACM Conference on Data and Application Security and Privacy (CODASPY)"
-    - "International Conference on Web Search and Data Mining (WSDM)"
-    - "ACM Conference on Information and Knowledge Management (CIKM)"
+    - "International Conference on Very Large Data Bases (VLDB): 2027"
+    - "ACM ASIA Conference on Computer and Communications Security (AsiaCCS): 2027"
+    - "Neural Information Processing Systems (NeurIPS): 2026"
+    - "International Conference on Learning Representations (ICLR): 2025, 2026"
+    - "International Conference on Artificial Intelligence and Statistics (AISTATS): 2025, 2026"
+    - "ACM Web Conference (WWW): 2026"
+    - "ACM Conference on Data and Application Security and Privacy (CODASPY): 2026"
+    - "International Conference on Web Search and Data Mining (WSDM): 2026"
+    - "ACM Conference on Information and Knowledge Management (CIKM): 2024, 2025, 2026"
+    - "ACM Conference on Research and Development in Information Retrieval (SIGIR): 2023, 2024, 2025, 2026"
+    - "International Joint Conference on Neural Networks (IJCNN): 2025"
+    - "Table Representation Learning Workshop (TRL): 2024, 2025"
+    - "AAAI Conference on Artificial Intelligence (AAAI): 2023, 2024, 2025, 2026"
+    - "ACM Conference on Information Retrieval in the Asia Pacific (SIGIR-AP): 2023, 2024"
 
-- title: Journal Reviewer
+- title: Poster Program Committee
+  abbrs: "IEEE S&P (2026)"
+  items:
+    - "IEEE Symposium on Security and Privacy (S&P): 2026"
+
+- title: Journal Reviewers
   abbrs: "CSUR, TDSC, TOPS, VLDBJ, TKDE, TORS, TBD"
   items:
     - "ACM Computing Surveys (CSUR)"
