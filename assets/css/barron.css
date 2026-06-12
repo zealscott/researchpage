@@ -376,6 +376,11 @@ sup {
   font-size: 16px;
   font-weight: 700;
   line-height: 1.45;
+  color: #1a1a1a;
+}
+
+.blog-item-title:hover {
+  color: #f09228;
 }
 
 .blog-item-meta {
