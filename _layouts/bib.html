@@ -42,15 +42,14 @@
 <em>{{ entry.booktitle }} {{ entry.year }}</em>
 {%- endif -%}
 {%- if entry.note and entry.manuscript != "true" %} <span class="award-tag">{{ entry.note }}</span>{% endif %}
-{%- if entry.arxiv %}
-&nbsp;[<a href="https://arxiv.org/abs/{{ entry.arxiv }}">arXiv</a>]
-{%- endif %}
 {%- if entry.pdf %}
 {%- if entry.pdf contains '://' %}
 &nbsp;[<a href="{{ entry.pdf }}">pdf</a>]
 {%- else %}
 &nbsp;[<a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}">pdf</a>]
 {%- endif %}
+{%- elsif entry.arxiv %}
+&nbsp;[<a href="https://arxiv.org/pdf/{{ entry.arxiv }}">pdf</a>]
 {%- endif %}
 {%- if entry.html %}
 &nbsp;[<a href="{{ entry.html }}">link</a>]
