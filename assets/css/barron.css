@@ -476,16 +476,33 @@ sup {
 }
 
 .post-content figure {
-  margin: 28px auto;
+  margin: 28px auto 10px;
+  text-align: center;
+}
+
+.post-content figcaption,
+.post-content .caption,
+.post-content .caption a,
+.post-content .caption em,
+.post-content .caption b {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #888;
   text-align: center;
 }
 
 .post-content figcaption {
   margin-top: 10px;
-  font-size: 13px;
-  line-height: 1.55;
-  color: #888;
-  text-align: center;
+}
+
+.post-content .caption {
+  margin: 0 auto 28px;
+  max-width: 85%;
+  font-style: italic;
+}
+
+.post-content .caption a {
+  text-decoration: underline;
 }
 
 .post-content code {
