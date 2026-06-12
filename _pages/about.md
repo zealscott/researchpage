@@ -64,6 +64,19 @@ permalink: /
   </tbody>
 </table>
 
+<!-- Selected Publications Section -->
+<table class="section-table">
+  <tbody>
+    <tr>
+      <td class="section-cell">
+        <h2>Selected Publications</h2>
+        {% bibliography -f {{ site.scholar.bibliography }} -q @*[selected=true]* %}
+        <p class="text-meta"><a href="{{ '/publications/' | relative_url }}">See the full publication list &rarr;</a></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 <!-- Honors Section -->
 <table class="section-table">
   <tbody>
