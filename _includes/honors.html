@@ -1,5 +1,0 @@
-<!-- honors.html -->
-{% for honor in site.data.honors %}
-<div style="margin-bottom: 0.5em;">• {{ honor.prefix }}{% if honor.url %}<a href="{{ honor.url }}">{{ honor.name }}</a>{% else %}{{ honor.name }}{% endif %}{{ honor.suffix }}, {{ honor.year }}{% if honor.extra_links %}. Covered by {% for link in honor.extra_links %}<a href="{{ link.url }}">{{ link.label }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}</div>
-{% endfor %}
-<div style="margin-bottom: 2em;"></div>

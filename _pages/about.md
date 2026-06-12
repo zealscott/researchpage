@@ -15,17 +15,17 @@ permalink: /
         <div class="research-pillars">
           <div class="pillar pillar--discovery">
             <div class="pillar-title">🤖 AI Security and Privacy</div>
-            <div class="pillar-sub">Uncovering threats from LLM misuse</div>
-            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated profile inference</a> and <a href="https://arxiv.org/abs/2509.14278">risks beyond data privacy</a>, and building practical data-use detection methods for the responsible use of training data in LLMs.</div>
+            <div class="pillar-sub">Uncovering privacy threats from LLM misuse</div>
+            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated profile inference</a> and <a href="https://arxiv.org/abs/2509.14278">risks beyond data privacy</a>, and building practical data-use detection methods for AI training.</div>
           </div>
           <div class="pillar pillar--mitigation">
             <div class="pillar-title">🔍 Data Privacy in ML</div>
-            <div class="pillar-sub">Assessing leakage in ML models</div>
-            <div class="pillar-detail">designing principled <a href="https://arxiv.org/abs/2507.21412">membership inference attacks</a> and auditing privacy risks of LLMs via <a href="https://arxiv.org/abs/2510.05699">tokenizers</a>, <a href="https://arxiv.org/abs/2601.02751">fine-tuning</a>, and <a href="https://arxiv.org/abs/2601.20125">diffusion-based LMs</a>.</div>
+            <div class="pillar-sub">Assessing information leakage in ML models</div>
+            <div class="pillar-detail">designing principled <a href="https://arxiv.org/abs/2507.21412">membership inference attacks</a> and auditing privacy risks of LLMs via <a href="https://arxiv.org/abs/2510.05699">tokenizers</a>, <a href="https://arxiv.org/abs/2601.02751">fine-tuning</a>.
           </div>
           <div class="pillar pillar--threat">
             <div class="pillar-title">🔒 Private Data Synthesis</div>
-            <div class="pillar-sub">Synthesis with provable privacy</div>
+            <div class="pillar-sub">Synthesis sensitive data with provable privacy</div>
             <div class="pillar-detail">developing differentially private synthesis algorithms for <a href="https://arxiv.org/abs/2402.06806">various types</a> of <a href="https://arxiv.org/abs/2302.06180">sensitive data</a>.</div>
           </div>
         </div>
