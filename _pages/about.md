@@ -1,55 +1,103 @@
 ---
-layout: about
+layout: barron
 title: About
 permalink: /
-subtitle: AI Security & Data Privacy
-profile:
-  align: right
-  image: yuntao.png
-  image_circular: true # crops the image to make it circular
-  address:
-    # <p>305 N. University St.</p>
-    # <p>West Lafayette, USA</p>
-    # <div style="text-align: center;">
-    # <p>
-    # <a href="mailto:ytdu@purdue.edu" title="email"><i class="fas fa-envelope fa-2x"></i></a> 
-    # <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" title="Google Scholar"><i class="ai ai-google-scholar fa-2x"></i></a>  
-    # <a href="https://github.com/zealscott" title="GitHub"><i class="fab fa-github fa-2x"></i></a>
-    # <a href="https://twitter.com/scott_ytdu" title="Twitter><i class="fa-brands fa-x-twitter fa-2xl"></i></a>  
-    # <a href="https://research.yuntaodu.me/feed.xml" title="RSS Feed"><i class="fas fa-rss-square fa-2x"></i></a>
-    # </p>
-    # </div>
-
-news: true  # includes a list of news items
-latest_posts: false  # includes a list of the newest posts
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false  # includes social icons at the bottom of the page
-honors: true
-services: true
 ---
 
-I am a PhD candidate in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). Here is my [CV](https://yuntaodu.me/files/Yuntao_Du_Resume.pdf) (updated May 20, 2026).
+<!-- Bio Section -->
+<table class="section-table section-table--spaced">
+  <tbody>
+    <tr>
+      <td class="section-cell">
+        <p>I am a PhD candidate in computer science at <a href="https://www.purdue.edu/">Purdue University</a>, advised by Prof. <a href="https://www.cs.purdue.edu/homes/ninghui">Ninghui Li</a>. Here is my <a href="{{ '/files/Yuntao_Du_Resume.pdf' | relative_url }}">CV</a> (updated May 20, 2026).</p>
+        <p>I study <b>security and privacy risks</b> in machine learning and LLM agents, from both adversarial and defensive perspectives. My current research focuses on three directions:</p>
 
-I study **security and privacy risks** in machine learning and LLM agents, from both adversarial and defensive perspectives. My current research focuses on:
+        <div class="research-pillars">
+          <div class="pillar pillar--discovery">
+            <div class="pillar-title">🤖 AI Security and Privacy</div>
+            <div class="pillar-sub">Uncovering emerging privacy threats posed by LLM misuse</div>
+            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated profile inference</a> and <a href="https://arxiv.org/abs/2509.14278">risks beyond data privacy</a>, and building practical data-use detection methods for the responsible use of training data in LLMs.</div>
+          </div>
+          <div class="pillar pillar--mitigation">
+            <div class="pillar-title">🔍 Data Privacy in Machine Learning</div>
+            <div class="pillar-sub">Assessing information leakage in ML models</div>
+            <div class="pillar-detail">designing principled <a href="https://arxiv.org/abs/2507.21412">membership inference attacks</a> and auditing privacy risks of LLMs via <a href="https://arxiv.org/abs/2510.05699">tokenizers</a>, <a href="https://arxiv.org/abs/2601.02751">fine-tuning</a>, and <a href="https://arxiv.org/abs/2601.20125">diffusion-based LMs</a>.</div>
+          </div>
+          <div class="pillar pillar--threat">
+            <div class="pillar-title">🔒 Private Data Synthesis</div>
+            <div class="pillar-sub">Practical data synthesis with provable privacy guarantees</div>
+            <div class="pillar-detail">developing differentially private synthesis algorithms for <a href="https://arxiv.org/abs/2402.06806">various types</a> of <a href="https://arxiv.org/abs/2302.06180">sensitive data</a>.</div>
+          </div>
+        </div>
 
-- **AI Security and Privacy.** (1) Uncovering emerging privacy threats posed by LLM misuse ([ACL'26](https://arxiv.org/abs/2505.12402), [Data Eng. Bulletin'25](https://arxiv.org/abs/2509.14278)); (2) Building practical data-use detection methods to support the responsible use of training data in LLMs.
-- **Data Privacy in Machine Learning.** (1) Designing principled membership inference attacks to assess information leakage in ML models ([NDSS'26](https://arxiv.org/abs/2507.21412), [USENIX Security'26](https://arxiv.org/abs/2509.06796)); (2) Auditing privacy risks of LLMs (USENIX Security'26 [\[1\]](https://arxiv.org/abs/2510.05699), [\[2\]](https://arxiv.org/abs/2601.02751); [ICLR'26](https://arxiv.org/abs/2601.20125));
-- **Differentially Private Data Synthesis.** Developing practical data synthesis algorithms with provable privacy guarantees for various types of sensitive data ([CCS'25](https://arxiv.org/abs/2402.06806), [VLDB'23](https://arxiv.org/abs/2302.06180)).
+        <p>My research has been recognized and supported by the <a href="https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html">Ross Fellowship</a> (2023&ndash;2027), <a href="https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html">Presidential Doctoral Excellence Award</a> (2023&ndash;2027), and <a href="https://www.bobherbold.com/">Herbold Scholarship</a> (2023&ndash;2024).</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
+<!-- News Section -->
+<table class="section-table">
+  <tbody>
+    <tr>
+      <td class="section-cell">
+        <h2>News</h2>
+        {% assign news = site.news | sort: 'date' | reverse %}
+        {% assign news_size = news | size %}
+        <ul class="list-compact">
+          {% for item in news limit: 5 %}
+          <li>{{ item.date | date: "[%Y.%m]" }} {% if item.inline %}{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}{% else %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}</li>
+          {% endfor %}
+        </ul>
+        {% if news_size > 5 %}
+        <div id="hidden-news" class="is-hidden">
+          <ul class="list-compact">
+            {% for item in news offset: 5 %}
+            <li>{{ item.date | date: "[%Y.%m]" }} {% if item.inline %}{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}{% else %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endif %}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <span class="news-toggle" onclick="toggleNews()">Show more news</span>
+        {% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-My research has been recognized and supported by the [Ross Fellowship](https://www.purdue.edu/gradschool/fellowship/funding-resources-for-students/fellowships/managed-fellowships/recruitment-fellowships.html) (2023-2027), [Presidential Doctoral Excellence Award](https://www.purdue.edu/newsroom/purduetoday/releases/2023/Q2/purdue-invests-in-graduate-student-stipends,-raising-minima-and-launching-presidential-doctoral-excellence-awards.html) (2023-2027), and [Herbold Scholarship](https://www.bobherbold.com/) (2023-2024).
+<!-- Honors Section -->
+<table class="section-table">
+  <tbody>
+    <tr>
+      <td class="section-cell">
+        <h2>Selected Honors &amp; Awards</h2>
+        <ul class="list-compact">
+          {% for honor in site.data.honors %}
+          <li>{{ honor.prefix }}<strong>{% if honor.url %}<a href="{{ honor.url }}">{{ honor.name }}</a>{% else %}{{ honor.name }}{% endif %}</strong>{{ honor.suffix }}, {{ honor.year }}{% if honor.extra_links %} &nbsp;{% for link in honor.extra_links %}[<a href="{{ link.url }}">{{ link.label }}</a>]{% unless forloop.last %} {% endunless %}{% endfor %}{% endif %}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-
-
-
-<!-- I have been very fortunate to work with Prof. [Yunjun Gao](https://person.zju.edu.cn/en/gaoyj_en) at Zhejiang University <img src='/assets/img/zju_logo.svg' style="width: 4em;">, with Prof. [Zhikun Zhang](http://zhangzhk.com/) at Stanford University <img src='/assets/img/stanford_logo.svg' style="width: 4em;">, with Dr. [Jianxun Lian](https://www.microsoft.com/en-us/research/people/jialia) and Dr. [Xing Xie](https://www.microsoft.com/en-us/research/people/xingx/) at [Microsoft Research Asia](https://www.msra.cn/) <img src='/assets/img/microsoft_logo.svg' style="width: 4em;">. -->
-
-<!-- I have been very fortunate to work with Prof. [Yunjun Gao](https://person.zju.edu.cn/en/gaoyj_en) at Zhejiang University <img src='/assets/img/zju_logo.svg' style="width: 4em;">, with Prof. [Zhikun Zhang](http://zhangzhk.com/) at Stanford University <img src='/assets/img/stanford_logo.svg' style="width: 4em;">, with Prof. [Christian S. Jensen](https://homes.cs.aau.dk/~csj/) at Aalborg University <img src='/assets/img/aau_logo.svg' style="width: 4em;">,  with Prof. [Baihua Zheng](https://faculty.smu.edu.sg/profile/zheng-baihua-521) at Singapore Management University <img src='/assets/img/smu_logo.svg' style="width: 3.5em;">, with Dr. [Jianxun Lian](https://www.microsoft.com/en-us/research/people/jialia) and Dr. [Xing Xie](https://www.microsoft.com/en-us/research/people/xingx/) at [Microsoft Research Asia](https://www.msra.cn/) <img src='/assets/img/microsoft_logo.svg' style="width: 4em;">. -->
-
-
-
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+<!-- Service Section -->
+<table class="section-table">
+  <tbody>
+    <tr>
+      <td class="section-cell">
+        <h2>Service</h2>
+        <ul>
+          {% for service in site.data.services %}
+          <li><b>{{ service.title }}</b>
+            <ul class="list-compact">
+              {% for item in service.items %}
+              <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>

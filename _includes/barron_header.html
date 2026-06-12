@@ -1,0 +1,23 @@
+<div class="header-container">
+  <div class="header-image">
+    <a href="{{ '/assets/img/yuntao.png' | relative_url }}"><img alt="profile photo" src="{{ '/assets/img/yuntao.png' | relative_url }}"></a>
+  </div>
+  <div class="header-info">
+    <h1>Yuntao Du (杜云滔)</h1>
+    <p class="text-reset">PhD Candidate</p>
+    <p class="text-reset"><a href="https://www.cs.purdue.edu/" class="text-plain">Department of Computer Science, Purdue University</a></p>
+    <p class="text-meta">
+      <a href="mailto:{{ site.email }}">Email</a> &nbsp;/&nbsp;
+      <a href="{{ '/files/Yuntao_Du_Resume.pdf' | relative_url }}">CV</a> &nbsp;/&nbsp;
+      <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}">Scholar</a> &nbsp;/&nbsp;
+      <a href="https://github.com/{{ site.github_username }}">GitHub</a> &nbsp;/&nbsp;
+      <a href="https://twitter.com/{{ site.twitter_username }}">Twitter</a>
+    </p>
+  </div>
+</div>
+
+<div class="nav-menu">
+  <a {% if page.url == "/" %}class="active" {% endif %}href="{{ '/' | relative_url }}">Home</a>
+  <a {% if page.url contains "/publications" %}class="active" {% endif %}href="{{ '/publications/' | relative_url }}">Publications</a>
+  <a href="{{ '/blog/' | relative_url }}">Blog</a>
+</div>

@@ -1,0 +1,414 @@
+/* Barron-style homepage stylesheet.
+   Base design from https://github.com/jonbarron/jonbarron.github.io
+   ("Feel free to clone this code for your own personal use."),
+   with customizations following xinyueshen.me. */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background-color: #fff;
+  padding: 0 16px;
+  zoom: 1.1;
+}
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a.text-plain {
+  color: #000;
+}
+
+a:focus,
+a:hover {
+  color: #f09228;
+  text-decoration: none;
+}
+
+body,
+td,
+th,
+tr,
+p,
+a {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+p {
+  margin: 12px 0;
+}
+
+li {
+  margin: 8px 0;
+  line-height: 1.2;
+}
+
+strong {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #1772d0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h3 {
+  margin: 18px 0 8px;
+  font-weight: 700;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+span.highlight {
+  background-color: #ffffd0;
+}
+
+.award-tag {
+  color: #d44;
+  font-weight: bold;
+}
+
+/* Page skeleton */
+.page-table {
+  width: 100%;
+  table-layout: fixed;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.page-table--narrow {
+  max-width: 800px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 28px;
+  margin-bottom: 52px;
+}
+
+.page-row,
+.page-cell {
+  padding: 0;
+}
+
+.section-table {
+  width: 100%;
+  table-layout: fixed;
+  border: 0;
+  border-spacing: 0;
+  border-collapse: separate;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.section-table--spaced {
+  margin-top: 0;
+}
+
+.section-table + .section-table {
+  border-top: 1px solid #ebebeb;
+}
+
+.section-cell {
+  padding: 22px 44px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.section-table:last-child .section-cell {
+  padding-bottom: 40px;
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 0;
+  padding: 48px 44px 28px;
+}
+
+.header-image {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.14);
+}
+
+.header-info {
+  flex: 1;
+  padding-top: 0;
+}
+
+.header-info h1 {
+  margin: 0 0 10px;
+  font-size: 38px;
+  font-weight: normal;
+  letter-spacing: -0.3px;
+  color: #1a1a1a;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+.header-info p {
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.text-reset {
+  margin: 0;
+}
+
+.text-meta {
+  margin-top: 14px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* Navigation menu */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 4px 44px 0;
+}
+
+.nav-menu a {
+  padding: 8px 16px;
+  color: #888;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+
+.nav-menu a:hover {
+  color: #1772d0;
+}
+
+.nav-menu a.active {
+  color: #1772d0;
+  border-bottom: 2px solid #1772d0;
+}
+
+/* Lists */
+.list-compact {
+  margin-top: 5px;
+}
+
+.list-flush {
+  margin-top: 0;
+}
+
+.list-flush li {
+  line-height: 1.7;
+}
+
+.list_no_dot {
+  list-style: none;
+  padding-left: 0;
+}
+
+.section-year {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* News toggle */
+.news-toggle,
+.service-toggle {
+  cursor: pointer;
+  color: #1772d0;
+  text-decoration: underline;
+}
+
+.news-toggle:hover,
+.service-toggle:hover {
+  color: #f09228;
+}
+
+/* Research pillars */
+.research-pillars {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: stretch;
+  margin: 0 0 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pillar {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 14px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.pillar:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.11);
+  transform: translateY(-2px);
+}
+
+.pillar--discovery { background: #fdf0f0; }
+.pillar--mitigation { background: #eef4fd; }
+.pillar--threat { background: #f4f4f4; }
+
+.pillar-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.pillar--discovery .pillar-title { color: #c0392b; }
+.pillar--mitigation .pillar-title { color: #1772d0; }
+.pillar--threat .pillar-title { color: #444; }
+
+.pillar-sub {
+  color: #777;
+  font-size: 11.5px;
+  font-style: italic;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.pillar-detail {
+  color: #777;
+  font-size: 11.5px;
+  font-style: italic;
+  line-height: 1.5;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.25s ease;
+}
+
+.pillar:hover .pillar-detail {
+  max-height: 150px;
+  opacity: 1;
+}
+
+.pillar-desc {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: #444;
+}
+
+.pillar-desc a,
+.pillar-sub a,
+.pillar-detail a {
+  font-size: inherit;
+}
+
+/* Publications list (jekyll-scholar output) */
+.bibliography {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.bibliography > li {
+  margin: 16px 0;
+  line-height: 1.7;
+}
+
+.bibliography em {
+  color: #333;
+}
+
+sup {
+  font-size: 11px;
+}
+
+/* Footer */
+.footer-note {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: gray;
+  font-size: 13px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+}
+
+.footer-note a {
+  color: gray;
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 32px 24px 20px;
+  }
+
+  .header-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .header-info h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .header-info p {
+    text-align: center;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 4px 16px 0;
+  }
+
+  .nav-menu a {
+    padding: 6px 10px;
+  }
+
+  .section-cell {
+    padding: 18px 24px;
+  }
+
+  .research-pillars {
+    flex-direction: column;
+  }
+}
