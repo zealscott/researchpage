@@ -1,6 +1,6 @@
 ---
 ---
-<!-- _layouts/bib.html: plain-list publication entry (Barron/Shen style) -->
+<!-- _layouts/bib.html: plain-list publication entry (Barron style) -->
 <strong>{{ entry.title }}</strong><br>
 {%- for author in entry.author_array -%}
   {%- assign author_is_self = false -%}
@@ -85,7 +85,7 @@
 &nbsp;[<a href="{{ entry.website }}">website</a>]
 {%- endif %}
 {%- comment -%}
-Media coverage, Shen-style. BibTeX convention:
+Media coverage. BibTeX convention:
 coverage = {TechXplore|https://...; AI Era|https://...}
 {%- endcomment -%}
 {%- if entry.coverage %}

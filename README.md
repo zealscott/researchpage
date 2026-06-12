@@ -1,8 +1,7 @@
 # yuntaodu.me
 
 Personal research website of Yuntao Du. Jekyll site styled after
-[Jon Barron's template](https://github.com/jonbarron/jonbarron.github.io)
-(with customizations following [xinyueshen.me](https://xinyueshen.me/)),
+[Jon Barron's template](https://github.com/jonbarron/jonbarron.github.io),
 with publications generated from BibTeX.
 
 ## Code structure
@@ -79,6 +78,5 @@ pipelines exist — each source branch carries its own `.github/workflows/deploy
 ## Credits
 
 Template adapted from [Jon Barron's website](https://github.com/jonbarron/jonbarron.github.io)
-("Feel free to clone this code for your own personal use."), with styling
-details following [Xinyue Shen's site](https://xinyueshen.me/). Publications
+("Feel free to clone this code for your own personal use."). Publications
 powered by [jekyll-scholar](https://github.com/inukshuk/jekyll-scholar).
