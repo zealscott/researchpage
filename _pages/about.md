@@ -72,7 +72,7 @@ permalink: /
         <h2>Selected Awards &amp; Honors</h2>
         <ul class="list-compact">
           {% for honor in site.data.honors %}
-          <li>{{ honor.prefix }}<strong>{% if honor.url %}<a href="{{ honor.url }}">{{ honor.name }}</a>{% else %}{{ honor.name }}{% endif %}</strong>{{ honor.suffix }}, {{ honor.year }}{% if honor.extra_links %} &nbsp;{% for link in honor.extra_links %}[<a href="{{ link.url }}">{{ link.label }}</a>]{% unless forloop.last %} {% endunless %}{% endfor %}{% endif %}</li>
+          <li>{{ honor.prefix }}<strong>{% if honor.url %}<a href="{{ honor.url }}">{{ honor.name }}</a>{% else %}{{ honor.name }}{% endif %}</strong>{{ honor.suffix }}, {{ honor.year }}{% if honor.extra_links %} &nbsp;Coverage: {% for link in honor.extra_links %}[<a href="{{ link.url }}">{{ link.label }}</a>]{% unless forloop.last %} {% endunless %}{% endfor %}{% endif %}</li>
           {% endfor %}
         </ul>
       </td>

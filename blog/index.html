@@ -12,9 +12,12 @@ nav_order: 3
     <tr>
       <td class="section-cell">
         <h2>Blog</h2>
-        <ul class="list-flush">
+        <ul class="blog-list">
           {% for post in site.posts %}
-          <li>{{ post.date | date: "[%Y.%m]" }} <a href="{{ post.url | relative_url }}"><b>{{ post.title }}</b></a></li>
+          <li>
+            <a class="blog-item-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <div class="blog-item-meta">{{ post.date | date: '%B %-d, %Y' }} &nbsp;&middot;&nbsp; {{ post.content | strip_html | number_of_words | divided_by: 180 | plus: 1 }} min read</div>
+          </li>
           {% endfor %}
         </ul>
       </td>

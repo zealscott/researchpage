@@ -84,3 +84,15 @@
 {%- if entry.website %}
 &nbsp;[<a href="{{ entry.website }}">website</a>]
 {%- endif %}
+{%- comment -%}
+Media coverage, Shen-style. BibTeX convention:
+coverage = {TechXplore|https://...; AI Era|https://...}
+{%- endcomment -%}
+{%- if entry.coverage %}
+<br>Coverage:
+{%- assign cov_items = entry.coverage | split: ";" -%}
+{%- for cov in cov_items -%}
+{%- assign cov_parts = cov | split: "|" %}
+[<a href="{{ cov_parts[1] | strip }}">{{ cov_parts[0] | strip }}</a>]
+{%- endfor %}
+{%- endif %}

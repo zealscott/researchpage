@@ -79,8 +79,10 @@
             <tbody>
               <tr>
                 <td class="section-cell">
-                  <h1 class="post-title">{{ page.title }}</h1>
-                  <p class="text-meta">{{ page.date | date: '%B %-d, %Y' }}{% for author in page.authors %} &nbsp;&middot;&nbsp; {% if author.url %}<a href="{{ author.url }}">{{ author.name }}</a>{% else %}{{ author.name }}{% endif %}{% endfor %}</p>
+                  <div class="post-header">
+                    <h1 class="post-title">{{ page.title }}</h1>
+                    <p class="post-meta">{{ page.date | date: '%B %-d, %Y' }}{% for author in page.authors %} &nbsp;&middot;&nbsp; {% if author.url %}<a href="{{ author.url }}">{{ author.name }}</a>{% else %}{{ author.name }}{% endif %}{% endfor %} &nbsp;&middot;&nbsp; {{ content | strip_html | number_of_words | divided_by: 180 | plus: 1 }} min read</p>
+                  </div>
 
                   <d-article>
                     {{ content }}
