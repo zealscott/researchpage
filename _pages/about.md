@@ -14,8 +14,8 @@ permalink: /
 
         <div class="research-pillars">
           <div class="pillar pillar--discovery">
-            <div class="pillar-title">🤖 AI Security and Privacy</div>
-            <div class="pillar-sub">Uncovering privacy threats from LLM misuse</div>
+            <div class="pillar-title">🤖 New Security Threats in AI era</div>
+            <div class="pillar-sub">Uncovering threats from LLM misuse</div>
             <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated profile inference</a> and <a href="https://arxiv.org/abs/2509.14278">risks beyond data privacy</a>, and building practical data-use detection methods for AI training.</div>
           </div>
           <div class="pillar pillar--mitigation">
@@ -25,7 +25,7 @@ permalink: /
           </div>
           <div class="pillar pillar--threat">
             <div class="pillar-title">🔒 Private Data Synthesis</div>
-            <div class="pillar-sub">Synthesis sensitive data with provable privacy</div>
+            <div class="pillar-sub">Synthesis data with provable guarantee</div>
             <div class="pillar-detail">developing differentially private synthesis algorithms for <a href="https://arxiv.org/abs/2402.06806">various types</a> of <a href="https://arxiv.org/abs/2302.06180">sensitive data</a>.</div>
           </div>
         </div>
