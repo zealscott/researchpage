@@ -21,7 +21,7 @@ permalink: /
           <div class="pillar pillar--mitigation">
             <div class="pillar-title">🔍 Data Privacy in ML</div>
             <div class="pillar-sub">Assessing information leakage in ML models</div>
-            <div class="pillar-detail">designing principled <a href="https://arxiv.org/abs/2507.21412">membership inference attacks</a> and auditing privacy risks of LLMs via <a href="https://arxiv.org/abs/2509.06796">imitative training</a>, <a href="https://arxiv.org/abs/2510.05699">tokenizers</a>, and <a href="https://arxiv.org/abs/2601.02751">fine-tuning</a>.</div>
+            <div class="pillar-detail">developing principled membership inference strategies, such as <a href="https://arxiv.org/abs/2507.21412">cascading and proxy attacks</a> and <a href="https://arxiv.org/abs/2509.06796">imitative training</a>, and applying them to audit privacy risks of LLMs via <a href="https://arxiv.org/abs/2510.05699">tokenizers</a> and <a href="https://arxiv.org/abs/2601.02751">fine-tuning</a>.</div>
           </div>
           <div class="pillar pillar--threat">
             <div class="pillar-title">🛡️ Private Data Synthesis</div>
