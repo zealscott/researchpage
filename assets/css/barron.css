@@ -81,6 +81,26 @@ span.highlight {
   font-weight: bold;
 }
 
+/* Per-entry annotation line (topic tag + one-sentence summary); hidden by
+   default, shown inside an opt-in wrapper (homepage selected publications),
+   which also hides the mentee marker. Tag colors mirror the pillars. */
+.pub-note-line { display: none; }
+.pub-annotated .pub-note-line { display: inline; }
+.pub-annotated .marker-mentee { display: none; }
+.pub-annotated .marker-star { display: none; }
+.pub-topic {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 0 7px;
+  border-radius: 9px;
+  white-space: nowrap;
+}
+.pub-topic--security { background: #fdf0f0; color: #c0392b; }
+.pub-topic--mlprivacy { background: #eef4fd; color: #1772d0; }
+.pub-topic--dataprivacy { background: #f4f4f4; color: #444; }
+.pub-summary { color: #555; }
+
 /* Page skeleton */
 .page-table {
   width: 100%;

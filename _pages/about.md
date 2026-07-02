@@ -14,19 +14,19 @@ permalink: /
 
         <div class="research-pillars">
           <div class="pillar pillar--discovery">
-            <div class="pillar-title">🚨 New Security Risks in AI Era</div>
+            <div class="pillar-title">🚨 AI Security & Safety</div>
             <div class="pillar-sub">Uncovering threats from LLM misuse</div>
-            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated profile inference</a>, and building practical data-use detection methods for AI training.</div>
+            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated privacy attacks</a>, and building security principles for LLM agents.</div>
           </div>
           <div class="pillar pillar--mitigation">
-            <div class="pillar-title">🔍 Data Privacy in ML</div>
+            <div class="pillar-title">🔍 Machine Learning Privacy</div>
             <div class="pillar-sub">Assessing information leakage in ML models</div>
             <div class="pillar-detail">developing principled membership inference strategies, such as <a href="https://arxiv.org/abs/2507.21412">cascading training</a> and <a href="https://arxiv.org/abs/2509.06796">imitative training</a>, and auditing privacy risks of LLMs via <a href="https://arxiv.org/abs/2510.05699">tokenizers</a> and <a href="https://arxiv.org/abs/2601.02751">fine-tuning</a>.</div>
           </div>
           <div class="pillar pillar--threat">
-            <div class="pillar-title">🛡️ Private Data Synthesis</div>
-            <div class="pillar-sub">Synthesis data with provable guarantee</div>
-            <div class="pillar-detail">developing differentially private synthesis algorithms for sensitive data, such as <a href="https://arxiv.org/abs/2402.06806">tabular data</a> and <a href="https://arxiv.org/abs/2302.06180">trajectory data</a>.</div>
+            <div class="pillar-title">🛡️ Data Privacy</div>
+            <div class="pillar-sub">Identifying and protecting data privacy</div>
+            <div class="pillar-detail">in critical applications like sensitive <a href="https://arxiv.org/abs/2402.06806">tabular data</a> and <a href="https://arxiv.org/abs/2302.06180">location data</a>.</div>
           </div>
         </div>
 
@@ -70,7 +70,12 @@ permalink: /
     <tr>
       <td class="section-cell">
         <h2>Selected Publications</h2>
-        {% bibliography -f {{ site.scholar.bibliography }} -q @*[selected=true]* %}
+        <div class="pub-annotated">
+        {% assign pillar_topics = "AI Security & Safety;Machine Learning Privacy;Data Privacy" | split: ";" %}
+        {%- for t in pillar_topics %}
+        {% bibliography -f {{ site.scholar.bibliography }} -q @*[selected=true&&topic={{t}}] %}
+        {%- endfor %}
+        </div>
         <p class="text-meta"><a href="{{ '/publications/' | relative_url }}">See the full publication list &rarr;</a></p>
       </td>
     </tr>

@@ -2,7 +2,7 @@
 layout: barron
 permalink: /publicationsbytopic/
 title: Publications
-topics: [AI Security & Privacy, Data Privacy, Recommender Systems, Spatio-temporal Data Mining]
+topics: [AI Security & Safety, Machine Learning Privacy, Data Privacy, Recommender Systems, Spatio-temporal Data Mining]
 nav: false
 ---
 
