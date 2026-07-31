@@ -24,10 +24,8 @@ toc:
 
 
 <div class="publications">
-  {% comment %} No manuscripts at the moment — restore this section when adding one.
   <h2 class="year">Manuscript</h2>
   {% bibliography -f {{ site.scholar.bibliography }} -q @*[manuscript=true]* %}
-  {% endcomment %}
 {%- for y in page.years %}
   <h2 class="year">{{y}}</h2>
   {% bibliography -f {{ site.scholar.bibliography }} -q @*[year={{y}}]* %}
