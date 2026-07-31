@@ -28,7 +28,7 @@ honors: true
 services: true
 ---
 
-I am a PhD candidate in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). Here is my [CV](https://yuntaodu.me/files/Yuntao_Du_Resume.pdf) (updated May 20, 2026).
+I am a PhD candidate in computer science at Purdue University, advised by Prof. [Ninghui Li](https://www.cs.purdue.edu/homes/ninghui). Here is my [CV](https://yuntaodu.me/files/Yuntao_Du_Resume.pdf) (updated July 30, 2026).
 
 I study **security and privacy risks** in machine learning and LLM agents, from both adversarial and defensive perspectives. My current research focuses on:
 
