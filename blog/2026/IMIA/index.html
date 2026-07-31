@@ -1,1 +1,366 @@
-<!DOCTYPE HTML> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>Imitation, Not Shadowing - Yuntao Du (杜云滔)</title> <meta name="author" content="Yuntao Du (杜云滔)"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="shortcut icon" href="/assets/img/favicon-32x32.png" type="image/png"> <link rel="stylesheet" type="text/css" href="/assets/css/barron.css?v=1783017921"> <script type="text/javascript">window.MathJax={tex:{tags:"ams"}};</script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y8G146HP6"></script> <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-6Y8G146HP6");</script> </head> <body data-bib-src="/assets/bibliography/2026-02-03-IMIA.bib"> <table class="page-table page-table--narrow"> <tbody> <tr class="page-row"> <td class="page-cell"> <div class="header-container"> <div class="header-image"> <a href="/assets/img/yuntao.png"><img alt="profile photo" src="/assets/img/yuntao.png"></a> </div> <div class="header-info"> <h1>Yuntao Du (杜云滔)</h1> <p class="text-reset">PhD Candidate · AI Security &amp; Data Privacy</p> <p class="text-reset"><a href="https://www.cs.purdue.edu/" class="text-plain" rel="external nofollow noopener" target="_blank">Department of Computer Science, Purdue University</a></p> <p class="text-meta"> <a href="mailto:ytdu@purdue.edu">Email</a>  /  <a href="/files/Yuntao_Du_Resume.pdf">CV</a>  /  <a href="https://scholar.google.com/citations?user=BbvY_QsAAAAJ" rel="external nofollow noopener" target="_blank">Scholar</a>  /  <a href="https://github.com/yuntaod" rel="external nofollow noopener" target="_blank">GitHub</a> </p> </div> </div> <div class="nav-menu"> <a href="/">Home</a> <a href="/publications/">Publications</a> <a class="active" href="/blog/">Blog</a> </div> <table class="section-table section-table--spaced"> <tbody> <tr> <td class="section-cell"> <div class="post-header"> <h1 class="post-title">Imitation, Not Shadowing</h1> <p class="post-meta">February 3, 2026  ·  <a href="https://yuntaodu.me">Yuntao Du</a>  ·  4 min read</p> </div> <article class="post-content"> <p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2509.06796" rel="external nofollow noopener" target="_blank">work</a>, which will be presented at <a href="https://www.usenix.org/conference/usenixsecurity26" rel="external nofollow noopener" target="_blank">USENIX Security 2026</a>. Code and datasets are available on <a href="https://github.com/yuntaod/IMIA" rel="external nofollow noopener" target="_blank">Github</a>.</p> <h2 id="introduction">Introduction</h2> <p>Membership Inference Attacks (MIAs) have become the standard tool for measuring data leakage in machine learning models. The goal is simple: given a data point and a trained model, determine whether that data point was used during training.</p> <p>Over the last serval years, the research community has viewed shadow training<d-cite key="sp17membership"></d-cite> as the gold standard for achieving highly powerful MIAs. In fact, all state-of-the-art MIAs utilize shadow training techniques. The intuition is simple: to understand how the target model behaves on members and non-members, the adversary trains multiple “shadow models” on similar data distributions. By observing how these shadow models behave on their own training data (members) versus unseen data (non-members), the adversary learns the behavioral patterns of membership and uses this knowledge to attack the target model.</p> <p>However, state-of-the-art shadow-based attacks such as LiRA<d-cite key="sp22lira"></d-cite> and PMIA<d-cite key="ndss26cpmia"></d-cite> come with a significant computational cost. To obtain reliable estimates of member and non-member behavior, these methods often require training hundreds of shadow models. This can consume hundreds of GPU hours and has been criticized as impractical, even for privacy auditing.</p> <p>In this work, we asked a fundamental question: <em>Is this massive computational cost of shadow training really necessary?</em></p> <h2 id="the-problem-with-target-agnostic-shadowing">The Problem with Target-Agnostic Shadowing</h2> <p>We identify that much of the inefficiency in existing methods comes from their <strong>target-agnostic</strong> design. Standard shadow models are trained to learn general behavioral distributions, but they are not trained to learn the specific idiosyncrasies of the target model under attack. As a result, shadow models exhibit high predictive variance. As shown in the top row of the figure below, the score distributions for members and non-members derived from shadow models often overlap significantly, especially for “hard” instances. This variance forces attackers to train hundreds of models just to statistically average out the noise.</p> <div class="row justify-content-md-center"> <div class="col-sm mt-0 pb-0 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2026-02-03-IMIA/scores-480.webp"></source> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2026-02-03-IMIA/scores-800.webp"></source> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2026-02-03-IMIA/scores-1400.webp"></source> <img src="/assets/img/2026-02-03-IMIA/scores.png" class="img-fluid rounded z-depth-1" width="100%" height="auto" title="Comparing score distributions. Top: Target-agnostic shadow models show high variance and overlap. Bottom: Our target-informed imitative models produce tight, separable distributions." onerror="this.onerror=null; document.querySelectorAll('.responsive-img-srcset').forEach(function(s){s.remove()});"> </picture> </figure> </div> </div> <div class="caption"> Comparing score distributions. Top: Target-agnostic shadow models show high variance and overlap. Bottom: Our target-informed imitative models produce tight, separable distributions. </div> <h2 id="our-solution-imitative-training">Our Solution: Imitative Training</h2> <p>To address this, we introduce the Imitative Membership Inference Attack (IMIA). Instead of training shadow models that are indepenedent from the target model, we explicitly train imitative models to <em>mimic</em> the target.</p> <p>IMIA operates in two stages to capture the behavioral discrepancy between members and non-members:</p> <ol> <li>Imitative OUT Models: We first train a model to match the target’s output on a reference dataset. Since the target model didn’t see this reference data during its training, this imitative model learns to replicate how the target behaves on non-members.</li> <li>Imitative IN Models: We then fine-tune this model using a small set of “pivot” instances. These pivots act as proxies for members, allowing the model to capture how behavior changes when the data is included during training.</li> </ol> <p>By comparing the target query’s score against these two tightly calibrated distributions (Imitative IN vs. Imitative OUT), we can perform highly accurate inference using far fewer models.</p> <p>The implications of this shift from “shadowing” to “imitation” are profound. We found that IMIA achieves superior attack performance while requiring less than 5% of the computational cost of state-of-the-art baselines. This reduces attack time from days to hours. This performance superiority is consistent across different attack settings (both adaptive and non-adaptive, as introduced in our previous paper<d-cite key="ndss26cpmia"></d-cite>), as well as across different model architectures and benchmarks.</p> <h2 id="conclusion">Conclusion</h2> <p>We believe that Imitative Training represents a paradigm shift for MIAs. By moving away from generic shadow training and towards target-informed imitation, we can assess privacy risks more accurately and with a fraction of the computation required by previous approaches.</p> <p>This shift is especially important for foundation models such as large language models (LLMs). Some studies argue that current MIAs against LLMs are ineffective. However, this may not be because LLMs are resilient to privacy attacks, but simply because existing attacks are too weak or computationally expensive to run at the necessary scale. We hope our approach provides a viable solution for this direction. There are enormous opportunities to explore along this path, and we invite more researchers to join us in developing powerful, efficient privacy auditing approaches for trustworthy ML.</p> </article> <div id="post-references" class="post-references" style="display: none;"> <h2>References</h2> <ol></ol> </div> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> <script type="text/javascript">document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll("d-cite"),t=document.body.getAttribute("data-bib-src");e.length&&t&&fetch(t).then(function(e){return e.text()}).then(function(t){function r(e){return e?e.split(/\s+and\s+/).map(function(e){var t=e.split(",");return 2===t.length?t[1].trim()+" "+t[0].trim():e.trim()}).join(", "):""}var n={};t.split(/^\s*@/m).slice(1).forEach(function(e){var t=e.match(/^\w+\s*\{\s*([^,\s]+)\s*,/);if(t){for(var r,a={},i=/(\w+)\s*=\s*(?:\{([\s\S]*?)\}\s*,?\s*(?:\n|$)|(\d+)\s*,?\s*(?:\n|$))/g;null!==(r=i.exec(e));){var o=(void 0!==r[2]?r[2]:r[3])||"";a[r[1].toLowerCase()]=o.replace(/[{}]/g,"").replace(/\s+/g," ").trim()}n[t[1]]=a}});var a=[];if(e.forEach(function(e){var t=(e.getAttribute("key")||"").split(",").map(function(e){return e.trim()}).filter(Boolean),i=document.createElement("sup");i.className="cite-marker",t.forEach(function(e,t){-1===a.indexOf(e)&&a.push(e);var o=a.indexOf(e)+1,c=document.createElement("a");c.href="#ref-"+e,c.textContent="["+o+"]";var l=n[e];l&&(c.title=r(l.author)+". "+(l.title||"")+(l.year?" ("+l.year+")":"")),t>0&&i.appendChild(document.createTextNode(",")),i.appendChild(c)}),e.replaceWith(i)}),a.length){var i=document.getElementById("post-references"),o=i.querySelector("ol");a.forEach(function(e){var t=n[e]||{},a=document.createElement("li");a.id="ref-"+e;var i=t.booktitle||t.journal||"",c="";t.author&&(c+=r(t.author)+". "),t.title&&(c+="<b>"+t.title+"</b>. "),i&&(c+="<i>"+i+"</i>"),t.year&&(c+=(i?", ":"")+t.year),c+=".",a.innerHTML=c,o.appendChild(a)}),i.style.display="block"}})});</script> </body> </html>
+<!DOCTYPE html>
+<!-- _layouts/distill.html --><html>
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Imitation, Not Shadowing | Yuntao Du @ Purdue</title>
+    <meta name="author" content="Yuntao  Du (杜云滔)">
+    <meta name="description" content="A research website of Yuntao Du. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Bootstrap Table -->
+    <link defer rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.css">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;display=swap">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    
+    <!-- Sidebar Table of Contents -->
+    <link href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.css" rel="stylesheet">
+    
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="/assets/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://yuntaodu.me/blog/2026/IMIA/">
+
+    <!-- Dark Mode -->
+    
+
+
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    <script src="/assets/js/distillpub/overrides.js"></script>
+    
+  </head>
+
+  <body>
+<d-front-matter>
+    <script async type="text/json">{
+      "title": "Imitation, Not Shadowing",
+      "description": "",
+      "published": "February 3, 2026",
+      "authors": [
+        {
+          "author": "Yuntao Du",
+          "authorURL": "https://yuntaodu.me",
+          "affiliations": [
+            {
+              "name": "Purdue University",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="https://yuntaodu.me/"><span class="font-weight-bold"> Yuntao Du </span></a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">Publications</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/blog/index.html">Blog</a>
+              </li>
+<!--  -->
+              <!-- Blog -->
+              <!-- <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog<span class="sr-only">(current)</span></a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    
+    <nav id="toc-sidebar" class="sticky-top distill-toc"></nav>
+    
+    <div class="post distill">
+
+      <d-title>
+        <h1>Imitation, Not Shadowing</h1>
+        <p></p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        <p>This is the gentle introduction to our <a href="https://arxiv.org/abs/2509.06796" rel="external nofollow noopener" target="_blank">work</a>, which will be presented at <a href="https://www.usenix.org/conference/usenixsecurity26" rel="external nofollow noopener" target="_blank">USENIX Security 2026</a>. Code and datasets are available on <a href="https://github.com/zealscott/IMIA" rel="external nofollow noopener" target="_blank">Github</a>.</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Membership Inference Attacks (MIAs) have become the standard tool for measuring data leakage in machine learning models. The goal is simple: given a data point and a trained model, determine whether that data point was used during training.</p>
+
+<p>Over the last serval years, the research community has viewed shadow training<d-cite key="sp17membership"></d-cite> as the gold standard for achieving highly powerful MIAs. In fact, all state-of-the-art MIAs utilize shadow training techniques. The intuition is simple: to understand how the target model behaves on members and non-members, the adversary trains multiple “shadow models” on similar data distributions. By observing how these shadow models behave on their own training data (members) versus unseen data (non-members), the adversary learns the behavioral patterns of membership and uses this knowledge to attack the target model.</p>
+
+<p>However, state-of-the-art shadow-based attacks such as LiRA<d-cite key="sp22lira"></d-cite> and PMIA<d-cite key="ndss26cpmia"></d-cite> come with a significant computational cost. To obtain reliable estimates of member and non-member behavior, these methods often require training hundreds of shadow models. This can consume hundreds of GPU hours and has been criticized as impractical, even for privacy auditing.</p>
+
+<p>In this work, we asked a fundamental question: <em>Is this massive computational cost of shadow training really necessary?</em></p>
+
+<h2 id="the-problem-with-target-agnostic-shadowing">The Problem with Target-Agnostic Shadowing</h2>
+
+<p>We identify that much of the inefficiency in existing methods comes from their <strong>target-agnostic</strong> design.
+Standard shadow models are trained to learn general behavioral distributions, but they are not trained to learn the specific idiosyncrasies of the target model under attack. 
+As a result, shadow models exhibit high predictive variance. 
+As shown in the top row of the figure below, the score distributions for members and non-members derived from shadow models often overlap significantly, especially for “hard” instances. This variance forces attackers to train hundreds of models just to statistically average out the noise.</p>
+
+<div class="row justify-content-md-center">
+    <div class="col-sm mt-0 pb-0 mt-md-0">
+ <figure>
+
+  <picture>
+    
+    <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/2026-02-03-IMIA/scores-480.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/2026-02-03-IMIA/scores-800.webp"></source>
+    <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/2026-02-03-IMIA/scores-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img src="/assets/img/2026-02-03-IMIA/scores.png" class="img-fluid rounded z-depth-1" width="30%" height="auto" title="Comparing score distributions. Top: Target-agnostic shadow models show high variance and overlap. Bottom: Our target-informed imitative models produce tight, separable distributions." onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+ Comparing score distributions. Top: Target-agnostic shadow models show high variance and overlap. Bottom: Our target-informed imitative models produce tight, separable distributions.
+</div>
+
+<h2 id="our-solution-imitative-training">Our Solution: Imitative Training</h2>
+
+<p>To address this, we introduce the Imitative Membership Inference Attack (IMIA). Instead of training shadow models that are indepenedent from the target model, we explicitly train imitative models to <em>mimic</em> the target.</p>
+
+<p>IMIA operates in two stages to capture the behavioral discrepancy between members and non-members:</p>
+<ol>
+  <li>Imitative OUT Models: We first train a model to match the target’s output on a reference dataset. Since the target model didn’t see this reference data during its training, this imitative model learns to replicate how the target behaves on non-members.</li>
+  <li>Imitative IN Models: We then fine-tune this model using a small set of “pivot” instances. These pivots act as proxies for members, allowing the model to capture how behavior changes when the data is included during training.</li>
+</ol>
+
+<p>By comparing the target query’s score against these two tightly calibrated distributions (Imitative IN vs. Imitative OUT), we can perform highly accurate inference using far fewer models.</p>
+
+<p>The implications of this shift from “shadowing” to “imitation” are profound. 
+We found that IMIA achieves superior attack performance while requiring less than 5% of the computational cost of state-of-the-art baselines. 
+This reduces attack time from days to hours. 
+This performance superiority is consistent across different attack settings (both adaptive and non-adaptive, as introduced in our previous paper<d-cite key="ndss26cpmia"></d-cite>), as well as across different model architectures and benchmarks.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>We believe that Imitative Training represents a paradigm shift for MIAs. By moving away from generic shadow training and towards target-informed imitation, we can assess privacy risks more accurately and with a fraction of the computation required by previous approaches.</p>
+
+<p>This shift is especially important for foundation models such as large language models (LLMs).
+Some studies argue that current MIAs against LLMs are ineffective. 
+However, this may not be because LLMs are resilient to privacy attacks, but simply because existing attacks are too weak or computationally expensive to run at the necessary scale. 
+We hope our approach provides a viable solution for this direction. 
+There are enormous opportunities to explore along this path, and we invite more researchers to join us in developing powerful, efficient privacy auditing approaches for trustworthy ML.</p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+      <d-bibliography src="/assets/bibliography/2026-02-03-IMIA.bib"></d-bibliography>
+</div>
+
+    <!-- Footer -->    <footer class="sticky-bottom mt-5">
+      <div class="container">
+        © Copyright 2026 Yuntao  Du (杜云滔). Last updated: July 31, 2026.
+      </div>
+    </footer>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script>
+  <!-- Sidebar Table of Contents -->
+  <script defer src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js"></script>
+
+
+  <!-- Bootstrap Table -->
+  <script defer src="https://unpkg.com/bootstrap-table@1.21.3/dist/bootstrap-table.min.js"></script>
+
+  <!-- Load Common JS -->
+  <script src="/assets/js/no_defer.js"></script>
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6Y8G146HP6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-6Y8G146HP6');
+  </script>
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  
+</body>
+</html>
