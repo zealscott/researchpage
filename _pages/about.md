@@ -16,7 +16,7 @@ permalink: /
           <div class="pillar pillar--discovery">
             <div class="pillar-title">🚨 AI Security & Safety</div>
             <div class="pillar-sub">Uncovering threats from LLM misuse</div>
-            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated privacy attacks</a>, and building security principles for LLM agents.</div>
+            <div class="pillar-detail">such as <a href="https://arxiv.org/abs/2505.12402">automated profile inference</a>, and building security principles for LLM agents.</div>
           </div>
           <div class="pillar pillar--mitigation">
             <div class="pillar-title">🔍 Machine Learning Privacy</div>
