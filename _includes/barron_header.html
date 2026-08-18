@@ -18,5 +18,6 @@
 <div class="nav-menu">
   <a {% if page.url == "/" %}class="active" {% endif %}href="{{ '/' | relative_url }}">Home</a>
   <a {% if page.url contains "/publications" %}class="active" {% endif %}href="{{ '/publications/' | relative_url }}">Publications</a>
+  <a {% if page.url contains "/teaching" %}class="active" {% endif %}href="{{ '/teaching/' | relative_url }}">Teaching</a>
   <a {% if page.url contains "/blog" %}class="active" {% endif %}href="{{ '/blog/' | relative_url }}">Blog</a>
 </div>
