@@ -15,10 +15,9 @@ nav: false
         <h3 class="section-year">2026</h3>
         <ol class="bibliography">
           <li>
-            <strong>CS 556: Data Security and Privacy</strong><br>
+            <strong><a href="{{ '/teaching/cs556-f26/' | relative_url }}">CS 556: Data Security and Privacy</a></strong><br>
             Instructor &middot; Fall 2026 &middot; Graduate-level<br>
             <em>Purdue University</em>
-            [<a href="{{ '/teaching/cs556-f26/' | relative_url }}">syllabus</a>]
           </li>
         </ol>
 
