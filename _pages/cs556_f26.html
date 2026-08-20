@@ -239,12 +239,14 @@ title: "CS 556: Data Security and Privacy"
   <p class="subtitle">Purdue University, Fall 2026. </p>
 
   <div class="note">
-    This syllabus is a draft and may change before the term begins. Course materials
+    This syllabus is a draft and may change. Course materials
     are distributed through Brightspace and are not posted on this page.
   </div>
 
   <h2>About the course</h2>
-  <p>Data security and privacy is an important part of information security. This course provides an introduction to the fundamental principles and techniques for data security and privacy. The course covers fundamental theories of access control, discretionary access control, mandatory access control, and role-based access control, database access control approaches including grant revoke, virtual private databases and labelled databases, database encryption. On privacy, it covers data anonymization, re-identification attacks, definition, primitives, and applications of differential privacy.  </p>
+  <p>Data security and privacy are essential components of information security. This course introduces the fundamental principles and techniques for protecting data security and privacy. The course covers foundational access control models, including discretionary access control, mandatory access control, and role-based access control. It also covers key topics in data privacy, including data anonymization, re-identification attacks, differential privacy and local differential privacy, membership inference attacks, and cryptographic techniques for privacy protection.
+  </p>
+
 
   <h2>Course info</h2>
   <table>
@@ -252,7 +254,6 @@ title: "CS 556: Data Security and Privacy"
       <tr><th>Instructor</th><td>Yuntao Du (<a href="mailto:{{ site.email }}">{{ site.email }}</a>)</td></tr>
       <tr><th>Term</th><td>Aug 24 to Dec 12, 2026. Final exams Dec 14 to 19.</td></tr>
       <tr><th>Format</th><td>Fully online, a new module is released each Monday</td></tr>
-      <tr><th>Assessments</th><td>Every graded item, including both exams, is completed offline: open book, untimed, and unproctored.</td></tr>
       <tr><th>Office hours</th><td>By appointment</td></tr>
       <tr><th>Discussion and submission</th><td>Brightspace</td></tr>
     </tbody>
@@ -270,7 +271,6 @@ title: "CS 556: Data Security and Privacy"
       <tr><td>Final exam</td><td>24%</td><td>Finals week, covering weeks 9 to 15</td></tr>
     </tbody>
   </table>
-  <p>All exams can be completed offline.</p>
 
   <h2>Schedule</h2>
   <p>One module per week. Weeks 1 to 15 carry new material, week 16 is review.
@@ -280,67 +280,67 @@ title: "CS 556: Data Security and Privacy"
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 1</span><span class="week-date">Aug 24</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Overview of the course. What information security means when the adversary is intelligent, and how security goals (confidentiality, integrity, availability) differ from personal privacy. A short history of access control research, from time-sharing systems through multi-level security to role-based models, then the operating system mechanisms underneath it all: CPU privilege modes, the kernel and user space split, memory protection, and system calls as guarded gates.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>What information security means when the adversary is intelligent, and the operating system mechanisms that enforce protection.</p></div>
       <div class="deliverable empty">No deadline</div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 2</span><span class="week-date">Aug 31</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Access control as a general security mechanism: subjects, objects, rights, and the access matrix model, and why a system authenticates a human user to a principal rather than to a person. Then UNIX concretely: how directories map names to files, permission bits on files and on directories, the three sets of bits, the process user-ID model with real, effective, and saved IDs, and the suid and sgid bits together with the security problems they introduce.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Access control fundamentals, from subjects, objects and the access matrix to Unix file permissions and the process user-ID model.</p></div>
       <div class="deliverable empty">No deadline</div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 3</span><span class="week-date">Sep 7</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Why access control fails with malware. The confused deputy problem. Analysis of DAC weaknesses.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Why discretionary access control fails against malicious software, and how mandatory access control responds.</p></div>
       <div class="deliverable empty">No deadline</div>
     </div>
 
     <div class="schedule-week milestone">
       <div class="week-stamp"><span class="week-number">Week 4</span><span class="week-date">Sep 14</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>The Bell-LaPadula model: subjects, objects, the simple security property and the star-property, and the Basic Security Theorem. Why BLP security is not sufficient on its own, which leads to covert channels, and to multi-level security in more detail: security levels, categories, labels, and the need-to-know principle. Closes with what trusted means, the trusted computing base, the reference monitor, and how the TCSEC evaluation divisions tried to assure it.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>The Bell-LaPadula model and multi-level security, together with covert channels and the assurance criteria built around them.</p></div>
       <div class="deliverable"><span>Quiz 1, HW1 out</span></div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 5</span><span class="week-date">Sep 21</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>The Common Criteria and its protection profiles, security targets, and evaluation assurance levels. Then integrity, starting from why it differs from confidentiality: Biba's integrity levels and its five mandatory policies, from strict integrity through the low-water-mark variants to the ring policy, and why integrity requires trusting subjects. Clark-Wilson's two mechanisms for enforcing commercial data integrity and how it departs from BLP, the Chinese Wall policy, and information flow in the non-interference and non-deducibility senses.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Integrity models from Biba to Clark-Wilson, and information flow security.</p></div>
       <div class="deliverable empty">No deadline</div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 6</span><span class="week-date">Sep 28</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Role-based access control: why roles rather than groups, and the RBAC96 family built up in layers, from RBAC0's users, roles, permissions, and sessions, to RBAC1's role hierarchies, to RBAC2's mutual exclusion and cardinality constraints. Then separation of duties, a critique of the ANSI RBAC standard and whether multiple roles should be activatable at once, and finally attribute-based access control with the XACML policy structure, dataflow model, and rule combining algorithms.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Role-based access control and its attribute-based successors.</p></div>
       <div class="deliverable"><span>HW1 due</span></div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 7</span><span class="week-date">Oct 5</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p><i>k</i>-anonymity, <i>l</i>-diversity, <i>t</i>-closeness. Reconstruction attacks.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Syntactic anonymization and the attacks that defeat it.</p></div>
       <div class="deliverable"><span>HW2 out</span></div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 8</span><span class="week-date">Oct 14</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Definition of epsilon differential privacy. Based on Chapter 2 of the book below. Sensitivity, the Laplace mechanism, and how privacy budget composes across queries.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Differential privacy: the definition, how privacy budget composes, and the Laplace mechanism.</p></div>
       <div class="deliverable"><span>HW2 due</span></div>
     </div>
 
     <div class="schedule-week milestone">
       <div class="week-stamp"><span class="week-number">Week 9</span><span class="week-date">Oct 19</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Continue primer on differential privacy: the exponential mechanism for selecting among discrete outputs, and the four settings differential privacy gets applied in, from answering interactive queries to optimizing a single known workload, to non-interactive publishing, to perturbing each record locally before collection.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>The exponential mechanism, and the settings in which differential privacy gets applied.</p></div>
       <div class="deliverable"><span>Quiz 2</span></div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 10</span><span class="week-date">Oct 26</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Definition of LDP. Frequency oracle protocols. Heavy hitter identification and frequent itemset mining under LDP.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Differential privacy in the local model, where each record is perturbed before it is ever collected.</p></div>
       <div class="deliverable"><span>HW3 out</span></div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 11</span><span class="week-date">Nov 2</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Publishing histograms under differential privacy: hierarchical methods with their branching factor, constrained inference and mean consistency, budget allocation, and, for spatial data where no good partitioning exists, uniform and adaptive grids and where their error comes from. Then marginal queries on high-dimensional data, where neither the direct nor the flat method works: the PriView approach of choosing views, adding noise, enforcing consistency and non-negativity, then reconstructing. Closes with membership privacy as a general framework and how differential privacy sits inside it.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Publishing histograms and marginals under differential privacy, and membership privacy as a general framework.</p></div>
       <div class="deliverable"><span>HW3 due, HW4 out</span></div>
     </div>
 
@@ -352,31 +352,31 @@ title: "CS 556: Data Security and Privacy"
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 13</span><span class="week-date">Nov 16</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Symmetric cryptography: perfect secrecy, the one-time pad, stream and block ciphers, hash functions.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Symmetric cryptography, from perfect secrecy to practical ciphers and hash functions.</p></div>
       <div class="deliverable"><span>HW4</span></div>
     </div>
 
     <div class="schedule-week">
       <div class="week-stamp"><span class="week-number">Week 14</span><span class="week-date">Nov 23</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Hash functions and MACs. Diffie-Hellman and ElGamal.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Hash functions, message authentication codes, and the move to public-key cryptography.</p></div>
       <div class="deliverable empty">No deadline</div>
     </div>
 
     <div class="schedule-week milestone">
       <div class="week-stamp"><span class="week-number">Week 15</span><span class="week-date">Nov 30</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>RSA and digital signatures. Secure multiparty computation: oblivious transfer, PIR, Yao. Garbled circuits, secret sharing, web side channels.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Public-key cryptography, digital signatures, and secure multiparty computation.</p></div>
       <div class="deliverable"><span>Quiz 3</span></div>
     </div>
 
     <div class="schedule-week milestone">
       <div class="week-stamp"><span class="week-number">Week 16</span><span class="week-date">Dec 7</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Final review and Q&amp;A. Last week of classes.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Final review and Q&amp;A in the last week of classes.</p></div>
       <div class="deliverable"><span>Quiz 4</span></div>
     </div>
 
     <div class="schedule-week milestone">
       <div class="week-stamp"><span class="week-number">Finals</span><span class="week-date">Dec 14</span></div>
-      <div class="class-slot"><span class="slot-label">Topic</span><p>Final exam released Monday Dec 14. One week to complete.</p></div>
+      <div class="class-slot"><span class="slot-label">Topic</span><p>Final exam, released Monday Dec 14 with one week to complete.</p></div>
       <div class="deliverable"><span>Final exam, Dec 19</span></div>
     </div>
   </div>
@@ -388,15 +388,7 @@ title: "CS 556: Data Security and Privacy"
 
   <h3>Books</h3>
 
-  <h4>Cryptography &amp; MPC</h4>
-  <ul>
-    <li>The Joy of Cryptography</li>
-    <li>A Pragmatic Introduction to Secure Multi-Party Computation</li>
-    <li>A Graduate Course in Applied Cryptography</li>
-    <li>Handbook of Applied Cryptography</li>
-  </ul>
-
-  <h4>Privacy-enhancing technologies (DP, anonymization)</h4>
+  <h4>Privacy-enhancing technologies</h4>
   <ul>
     <li>The Algorithmic Foundations of Differential Privacy</li>
     <li>Differential Privacy: From Theory to Practice</li>
@@ -406,44 +398,35 @@ title: "CS 556: Data Security and Privacy"
     <li>Differential Privacy for Databases</li>
   </ul>
 
-  <h3>Courses</h3>
-
-  <h4>Core DP &amp; privacy</h4>
+  <h4>Cryptography &amp; MPC</h4>
   <ul>
-    <li>Privacy in Statistics and Machine Learning by Adam Smith (BU) and Jonathan Ullman (NEU)</li>
-    <li>Algorithms for Private Data Analysis by Gautam Kamath (Waterloo)</li>
-    <li>Introduction to Differential Privacy: Theory, Algorithms and Applications
-    by Yuxiang Wang (UCSD)</li>
+    <li>The Joy of Cryptography</li>
+    <li>A Pragmatic Introduction to Secure Multi-Party Computation</li>
+    <li>A Graduate Course in Applied Cryptography</li>
+    <li>Handbook of Applied Cryptography</li>
   </ul>
 
-  <h4>Other flavors (theory, systems, fairness, ML)</h4>
+  <h3>Courses</h3>
+
   <ul>
-    <li>Theory: The Algorithmic Foundations of Adaptive Data Analysis
-    Fall 2017 by Aaron Roth (Penn) and Adam Smith (BU)</li>
-    <li>Systems: Private Systems
-    Spring 2020 by Roxana Geambasu (Columbia)</li>
-    <li>Mechanism design: Differential Privacy in Game Theory and Mechanism Design
-    Spring 2014 by Aaron Roth (Penn)</li>
-    <li>Fairness: CS 294: Fairness in Machine Learning
-    (UC Berkeley, Moritz Hardt)</li>
-    <li>ML: Privacy Preserving Machine Learning
-    Spring 2022 by Aurelien Bellet (Inria)</li>
+    <li>Privacy in Statistics and Machine Learning. Spring 2025 by Adam Smith (BU) and Jonathan Ullman (Northeastern).</li>
+    <li>CS 860, Algorithms for Private Data Analysis. Winter 2026 by Gautam Kamath (Waterloo).</li>
+    <li>CSC 2412, Algorithms for Private Data Analysis. Winter 2026 by Aleksandar Nikolov (Toronto).</li>
+    <li>CS 2080, Applied Privacy for Data Science. Spring 2025 by Salil Vadhan, James Honaker, and Priyanka Nanayakkara (Harvard).</li>
+    <li>DSC 291, Introduction to Differential Privacy. Fall 2024 by Yu-Xiang Wang (UC San Diego).</li>
+    <li>COMP 590, Privacy Enhancing Technologies. Summer 2025 by Saba Eskandarian (UNC Chapel Hill).</li>
   </ul>
 
   <h2>Policies</h2>
 
   <h3>Collaboration</h3>
-  <p>It is allowed and in fact encouraged for students to discuss homework questions. However,
-  you should not look at another student's written or typed answers, and you should not show
-  your written or typed answers to another student. Offences will have consequences ranging
-  from receiving a 0 on the homework to being reported to the school, depending on the
-  seriousness of the offence. Students are encouraged to talk with the instructor about any
-  questions you have about what is permitted on any particular assignment.</p>
-  <p>Quizzes and both exams are individual work, with no collaboration of any kind. Because
-  they are open book and untimed, this is the policy that matters most in this offering.
-  Please read it carefully.</p>
+  <p>It is allowed to discuss homework problems. However, if you look at another
+  student's program code or written or typed answers, or let another student look at your program
+  code or answers, that is considered cheating. If caught for the first time, you receive a 0 on
+  the assignment. For the second time, you receive a failing grade in the class.</p>
+  <p>Quizzes and both exams are individual work, with no collaboration of any kind.</p>
 
-  <h3>Use of large language models</h3>
+  <h3>Use of large language models (LLMs)</h3>
   <p>You may use LLMs to help you understand the concepts. Copying answers from an LLM is not
   allowed and is treated as academic dishonesty. When an LLM materially shaped your solution,
   say so and describe how you used it.</p>
