@@ -98,7 +98,7 @@ span.highlight {
 }
 .pub-topic--security { background: #fdf0f0; color: #c0392b; }
 .pub-topic--mlprivacy { background: #eef4fd; color: #1772d0; }
-.pub-topic--dataprivacy { background: #f4f4f4; color: #444; }
+.pub-topic--dataprivacy { background: #edf7ef; color: #1e8449; }
 .pub-summary { color: #555; }
 
 /* Page skeleton */
@@ -305,7 +305,7 @@ span.highlight {
 
 .pillar--discovery { background: #fdf0f0; }
 .pillar--mitigation { background: #eef4fd; }
-.pillar--threat { background: #f4f4f4; }
+.pillar--threat { background: #edf7ef; }
 
 .pillar-title {
   font-size: 14px;
@@ -315,7 +315,7 @@ span.highlight {
 
 .pillar--discovery .pillar-title { color: #c0392b; }
 .pillar--mitigation .pillar-title { color: #1772d0; }
-.pillar--threat .pillar-title { color: #444; }
+.pillar--threat .pillar-title { color: #1e8449; }
 
 .pillar-sub {
   color: #777;
