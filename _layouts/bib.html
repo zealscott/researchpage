@@ -37,9 +37,9 @@
 {%- elsif entry.abbr -%}
 <em>{{ entry.abbr }} {{ entry.year }}{% if entry.booktitle contains "Findings" %} (Findings){% endif %}</em>
 {%- elsif entry.type == "article" -%}
-<em>{{ entry.journal }} {{ entry.year }}</em>
+<em>{{ entry.journal }}, {{ entry.year }}</em>
 {%- else -%}
-<em>{{ entry.booktitle }} {{ entry.year }}</em>
+<em>{{ entry.booktitle }}, {{ entry.year }}</em>
 {%- endif -%}
 {%- if entry.note and entry.manuscript != "true" %} <span class="award-tag">{{ entry.note }}</span>{% endif %}
 {%- if entry.pdf %}
