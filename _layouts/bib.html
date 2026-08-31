@@ -41,7 +41,8 @@
 {%- else -%}
 <em>{{ entry.booktitle }}, {{ entry.year }}</em>
 {%- endif -%}
-{%- if entry.note and entry.manuscript != "true" %} <span class="award-tag">{{ entry.note }}</span>{% endif %}
+{%- if entry.note == "Poster" %} <em>(Poster)</em>{% endif %}
+{%- if entry.note and entry.note != "Poster" and entry.manuscript != "true" %} <span class="award-tag">{{ entry.note }}</span>{% endif %}
 {%- if entry.pdf %}
 {%- if entry.pdf contains '://' %}
 &nbsp;[<a href="{{ entry.pdf }}">pdf</a>]
