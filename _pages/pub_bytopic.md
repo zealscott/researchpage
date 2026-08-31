@@ -16,7 +16,7 @@ nav: false
         <sup>*</sup> equal contribution, <sup>†</sup> mentored student</p>
 
         {%- for y in page.topics %}
-        <h3 class="section-year">{{ y }}</h3>
+        <h3 class="section-topic">{{ y }}</h3>
         {% bibliography -f {{ site.scholar.bibliography }} -q @*[topic={{y}}] %}
         {%- endfor %}
       </td>

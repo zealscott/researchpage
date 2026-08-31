@@ -261,6 +261,17 @@ span.highlight {
   margin-bottom: 15px;
 }
 
+.section-topic {
+  margin: 30px 0 12px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #dbe7f5;
+  color: #1772d0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 .is-hidden {
   display: none;
 }
